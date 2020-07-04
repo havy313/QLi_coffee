@@ -6,7 +6,7 @@
     <div id="page-inner">
         <div class="row">
             <div class="col-md-12">
-                <h2>Quản lý danh mục</h2>
+                <h2>Quản lý danh mục coffee</h2>
             </div>
         </div>
         <!-- /. ROW  -->
