@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\admin",
+    "\\admin\\contact",
+    "\\admin\\story",
+    "\\files",
+    "\\templates",
+    "\\templates\\admin",
+    "\\templates\\admin\\inc",
+    "\\templates\\bstory",
+    "\\templates\\bstory\\inc"
+  ],
+  "SelectedNode": "\\templates\\admin\\inc\\leftbar.php",
+  "PreviewInSolutionExplorer": false
+}
