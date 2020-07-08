@@ -1,8 +1,8 @@
 <?php
  	$localhost = 'localhost';
  	$username = 'root';
- 	$password = '';
- 	$database = 'bstory';
+ 	$password = '12345';
+ 	$database = 'starbucks';
 
  	$mysqli = new mysqli($localhost, $username, $password, $database);
  	$mysqli->set_charset('utf8');

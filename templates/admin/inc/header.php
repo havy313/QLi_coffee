@@ -36,6 +36,17 @@
             <div style="color: white;
 padding: 15px 50px 5px 50px;
 float: right;
-font-size: 16px;"> Xin chào, <b>Admin</b> &nbsp; <a href="/auth/logout.php" class="btn btn-danger square-btn-adjust">Đăng xuất</a> </div>
+font-size: 16px;"> Xin chào, <b>
+    <?php 
+        // $id_user = htmlspecialchars($_GET["id"]);
+    	// $query = "SELECT * FROM users WHERE iduser = $id_user";
+        // $result = $mysqli ->query($query);
+        // while($row = mysqli_fetch_assoc($result)){
+        //     echo $row['fullname'];
+        //     }
+
+    ?>
+Admin
+</b> &nbsp; <a href="/auth/logout.php" class="btn btn-danger square-btn-adjust">Đăng xuất</a> </div>
         </nav>
         <!-- /. NAV TOP  -->

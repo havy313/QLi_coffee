@@ -27,7 +27,7 @@
                     <i class="fa fa-bell-o"></i>
                 </span>
                     <div class="text-box">
-                        <p class="main-text"><a href="/admin/story/" title="">Quản lý truyện</a></p>
+                        <p class="main-text"><a href="/admin/menu/" title="">Quản lý truyện</a></p>
                         <p class="text-muted">Có 20 truyện</p>
                     </div>
                 </div>

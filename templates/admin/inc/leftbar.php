@@ -13,7 +13,7 @@
                 <a href="/admin/cat/"><i class="fa fa-bar-chart-o fa-3x"></i> Quản lý danh mục</a>
             </li>
             <li>
-                <a href="/admin/story/"><i class="fa fa-qrcode fa-3x"></i> Quản lý truyện</a>
+                <a href="/admin/menu/"><i class="fa fa-qrcode fa-3x"></i> Quản lý truyện</a>
             </li>
             <li>
                 <a href="/admin/user/"><i class="fa fa-sitemap fa-3x"></i> Quản lý người dùng</a>
