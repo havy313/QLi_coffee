@@ -1,5 +1,5 @@
 <?php
- 	$localhost = 'localhost';
+ 	$localhost = 'localhost:3308';
  	$username = 'root';
  	$password = '12345';
  	$database = 'starbucks';

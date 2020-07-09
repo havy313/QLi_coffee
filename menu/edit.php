@@ -116,6 +116,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/inc/leftbar.php';
                                         <textarea class="form-control" rows="3" name="mota"><?php echo $arProduct['mota'] ?></textarea>
                                     </div>
                                     <button type="submit" name="submit" class="btn btn-success btn-md">Cập nhật</button>
+                                    <a class="btn btn-danger" href="index.php" role="button">Trở về</a>
                                 </form>
                             </div>
                         </div>

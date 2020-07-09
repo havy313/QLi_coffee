@@ -1,30 +1,51 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT']. '/templates/bstory/inc/header.php'; ?>
-<div class="content_resize">
-  <div class="mainbar">
-    <?php 
-      $query = "SELECT * FROM story ORDER BY story_id DESC";
-      $result = $mysqli->query($query);
-      while($arItem = mysqli_fetch_assoc($result)){
-      ?>
-    <div class="article">
-      <h2><?php echo $arItem['name']?></h2>
-      <p class="infopost">Ngày đăng: <?php echo $arItem['created_at']?>. Lượt đọc: <?php echo $arItem['counter']?></p>
-      <div class="clr"></div>
-      <div class="img"><img src="/files/<?php echo $arItem['picture']?>" width="161" height="192" alt="" class="fl" /></div>
-      <div class="post_content">
-        <p><?php echo $arItem['preview_text']?></p>
-        <p class="spec"><a href="detail.php?story_id=<?php echo $arItem['story_id']?>" class="rm">Chi tiết</a></p>
-      </div>
-      <div class="clr"></div>
+﻿<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/inc/header.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/inc/leftbar.php'; ?>
+<div id="page-wrapper">
+    <div id="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>TRANG QUẢN TRỊ VIÊN</h2>
+            </div>
+        </div>
+        <!-- /. ROW  -->
+        <hr />
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-4">
+                <div class="panel panel-back noti-box">
+                    <span class="icon-box bg-color-green set-icon">
+                    <i class="fa fa-bars"></i>
+                </span>
+                    <div class="text-box">
+                        <p class="main-text"><a href="/cat/" title="">Quản lý danh mục</a></p>
+                        <p class="text-muted">Có 4 danh mục</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4">
+                <div class="panel panel-back noti-box">
+                    <span class="icon-box bg-color-blue set-icon">
+                    <i class="fa fa-bell-o"></i>
+                </span>
+                    <div class="text-box">
+                        <p class="main-text"><a href="/menu/" title="">Quản lý truyện</a></p>
+                        <p class="text-muted">Có 20 truyện</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4">
+                <div class="panel panel-back noti-box">
+                    <span class="icon-box bg-color-brown set-icon">
+                    <i class="fa fa-rocket"></i>
+                </span>
+                    <div class="text-box">
+                        <p class="main-text"><a href="/user/" title="">Quản lý người dùng</a></p>
+                        <p class="text-muted">Có 5 người dùng</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
-    <?php
-      }
-    ?>
-    <p class="pages"><small>Trang 1 / 2</small> <span>1</span> <a href="#">2</a> <a href="#">&raquo;</a></p>
-  </div>
-  <div class="sidebar">
-  <?php include_once $_SERVER['DOCUMENT_ROOT']. '/templates/bstory/inc/leftbar.php'; ?>
-  </div>
-  <div class="clr"></div>
 </div>
-<?php include_once $_SERVER['DOCUMENT_ROOT']. '/templates/bstory/inc/footer.php'; ?>
+<!-- /. PAGE WRAPPER  -->
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/inc/footer.php'; ?>

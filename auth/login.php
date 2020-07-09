@@ -49,7 +49,7 @@
             //B1: tạo session
             $_SESSION['user'] = $user;
             //b2: Cho chuyển hướng sang admin
-              header("location:/admin/");
+              header("location:/");
               die();
               }
           }

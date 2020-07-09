@@ -22,7 +22,7 @@
                                     <a href="add.php" class="btn btn-success btn-md">Thêm</a>
                                 </div>
                                 <div class="col-sm-6" style="text-align: right;">
-                                    <form method="post" action="">
+                                    <form method="GET" action="">
                                         <input type="submit"  value="Tìm kiếm" class="btn btn-warning btn-sm" style="float:right" />
                                         <input type="text" name="search" value= "" class="form-control input-sm" placeholder="Nhập tên truyện" style="float:right; width: 300px;" />
                                         <div style="clear:both"></div>
@@ -46,8 +46,8 @@
                                 <tbody>
                                     <?php
                                         $query ='';
-                                        if(isset($_POST['search'])){
-                                            $search = $_POST['search'];
+                                        if(isset($_GET['search'])){
+                                            $search = trim($_GET['search']);
                                             if(($search)){
                                                 $query = "SELECT * FROM ((sanpham
                                                                     INNER JOIN loai ON sanpham.id_loai = loai.id_loai) 
@@ -91,6 +91,17 @@
                                     ?>
                                 </tbody>
                             </table>
+                            <?php 
+                                if(isset($_GET['search'])){
+                            ?>
+                            <div class="row">
+                                <div class="col-sm-12" style="text-align: right;">
+                                    <a href="index.php" title="" class="btn btn-primary"><i class="fa fa-reply"></i> Trở về</a>    
+                                </div>
+                            </div>
+                            <?php 
+                                }
+                            ?>
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="dataTables_info" id="dataTables-example_info" style="margin-top:27px">Hiển thị từ 1 đến 5 của 24 truyện</div>
