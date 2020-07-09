@@ -70,6 +70,7 @@
                                         <input type="text" name="fullname"  value ="<?php echo $arUser['fullname'];?>" class="form-control" />
                                     </div>
                                     <button type="submit" name="submit" class="btn btn-success btn-md">Sửa</button>
+                                    <a class="btn btn-danger" href="index.php" role="button">Trở về</a>
                                 </form>
 
 

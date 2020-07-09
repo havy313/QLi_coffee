@@ -27,9 +27,9 @@
                                     <a href="add.php" class="btn btn-success btn-md">Thêm</a>
                                 </div>
                                 <div class="col-sm-6" style="text-align: right;">
-                                    <form method="post" action="">
-                                        <input type="submit" name="search" value="Tìm kiếm" class="btn btn-warning btn-sm" style="float:right" />
-                                        <input type="search" class="form-control input-sm" placeholder="Nhập tên truyện" style="float:right; width: 300px;" />
+                                    <form method="get" action="">
+                                        <input type="submit" value="Tìm kiếm" class="btn btn-warning btn-sm" style="float:right" />
+                                        <input type="search" name="search" class="form-control input-sm" placeholder="Nhập tên loại" style="float:right; width: 300px;" />
                                         <div style="clear:both"></div>
                                     </form><br />
                                 </div>
@@ -46,19 +46,27 @@
                                 <tbody>
                                     <!-- lấy ra tất cả danh mục tin -->
                                     <?php 
-                                        $query = 'SELECT * FROM cat';
+                                        $query ='';
+                                        if(isset($_GET['search'])){
+                                        $search = trim($_GET['search']);
+                                        if(($search)){
+                                            $query = "SELECT * FROM loai WHERE ten_loai = '{$search}'";
+                                        }
+                                        } else {
+                                            $query = 'SELECT * FROM loai';
+                                        }
                                         $result = $mysqli->query($query);
                                         while ($arItem = mysqli_fetch_assoc($result)) {
-                                           $cat_id = $arItem['cat_id'];
-                                           $name = $arItem['name'];
+                                           $id_loai = $arItem['id_loai'];
+                                           $ten_loai = $arItem['ten_loai'];
                                     ?>
                                     <tr class="gradeX">
-                                        <td><?php echo $cat_id; ?></td>
-                                        <td><?php echo $name; ?></td>
+                                        <td><?php echo $id_loai; ?></td>
+                                        <td><?php echo $ten_loai; ?></td>
                                         
                                         <td class="center">
-                                            <a href="edit.php?id=<?php echo $cat_id; ?>" title="" class="btn btn-primary"><i class="fa fa-edit "></i> Sửa</a>
-                                            <a href="del.php?id=<?php echo $cat_id; ?>" onclick="return confirm('Bạn có thật sự muốn xóa danh mục này?')" title="" class="btn btn-danger"><i class="fa fa-pencil"></i> Xóa</a>
+                                            <a href="edit.php?id=<?php echo $id_loai; ?>" title="" class="btn btn-primary"><i class="fa fa-edit "></i> Sửa</a>
+                                            <a href="del.php?id=<?php echo $id_loai; ?>" onclick="return confirm('Bạn có thật sự muốn xóa danh mục này?')" title="" class="btn btn-danger"><i class="fa fa-pencil"></i> Xóa</a>
                                         </td>
                                     </tr>
                                    <?php
@@ -66,6 +74,17 @@
                                    ?>
                                 </tbody>
                             </table>
+                            <?php 
+                                if(isset($_GET['search'])){
+                            ?>
+                            <div class="row">
+                                <div class="col-sm-12" style="text-align: right;">
+                                    <a href="index.php" title="" class="btn btn-primary"><i class="fa fa-reply"></i> Trở về</a>    
+                                </div>
+                            </div>
+                            <?php 
+                                }
+                            ?>
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="dataTables_info" id="dataTables-example_info" style="margin-top:27px">Hiển thị từ 1 đến 5 của 24 truyện</div>

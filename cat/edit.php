@@ -19,18 +19,18 @@
                             <div class="col-md-12">
                                 <?php
                                //trước khi kiểm tra cần phải lấy id về, trong file index có key là id
-                                $cat_id = $_GET['id'];
+                                $id_loai = $_GET['id'];
                                 //để lấy được tên danh mục mà chúng ta đang muốn sửa hiển thị lại trong ô input thì sau khi nhận được id này thì lập tức viết một câu: 
 
-                                $sql = "SELECT  * FROM cat WHERE cat_id = {$cat_id} ";
+                                $sql = "SELECT  * FROM loai WHERE id_loai = {$id_loai} ";
                                 $result2 = $mysqli->query($sql);
-                                //select này trả về một dòng dữ liệu duy nhất thì chúng ta đã where cat_id làm khóa chính rồi nên ko cần thiết phải lặp 
+                                //select này trả về một dòng dữ liệu duy nhất thì chúng ta đã where id_loai làm khóa chính rồi nên ko cần thiết phải lặp 
                                 $arCat = mysqli_fetch_assoc($result2);
 
                                 //kiểm tra người dùng bấm submit
                                     if (isset($_POST['submit'])) {
-                                       $name = $_POST['name'];
-                                       $query = "UPDATE cat SET name = '{$name}' WHERE cat_id = {$cat_id}";
+                                       $ten_loai = $_POST['ten_loai'];
+                                       $query = "UPDATE loai SET ten_loai = '{$ten_loai}' WHERE id_loai = {$id_loai}";
                                        $result = $mysqli->query($query);
                                        if ($result) {
                                           HEADER("LOCATION:index.php?msg=Sửa thành công");
@@ -44,13 +44,11 @@
                                 <form  action = "" method= "post" role="form">
                                     <div class="form-group">
                                         <label>Tên danh mục</label>
-                                        <input type="text" name="name" value="<?php echo $arCat['name'] ;?>" class="form-control" />
+                                        <input type="text" name="ten_loai" value="<?php echo $arCat['ten_loai'] ;?>" class="form-control" />
                                     </div>
                                     <button type="submit" name="submit" class="btn btn-success btn-md">Sửa</button>
+                                    <a class="btn btn-danger" href="index.php" role="button">Trở về</a>
                                 </form>
-
-
-
                             </div>
 
                         </div>

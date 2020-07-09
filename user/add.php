@@ -51,6 +51,7 @@
                                         <input type="text" name="fullname" class="form-control" />
                                     </div>
                                     <button type="submit" name="submit" class="btn btn-success btn-md">Thêm</button>
+                                    <a class="btn btn-danger" href="index.php" role="button">Trở về</a>
                                 </form>
 
 

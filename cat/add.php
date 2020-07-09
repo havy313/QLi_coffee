@@ -20,8 +20,8 @@
                                 <?php
                                 //kiểm tra người dùng bấm submit
                                     if (isset($_POST['submit'])) {
-                                       $name = $_POST['name'];
-                                       $query = "INSERT INTO cat(name) VALUES ('{$name}')";
+                                       $ten_loai = $_POST['ten_loai'];
+                                       $query = "INSERT INTO loai(ten_loai) VALUES ('{$ten_loai}')";
                                        $result = $mysqli->query($query);
                                        if ($result) {
                                           HEADER("LOCATION:index.php?msg=Thêm thành công");
@@ -35,9 +35,10 @@
                                 <form  action = "" method= "post" role="form">
                                     <div class="form-group">
                                         <label>Tên danh mục</label>
-                                        <input type="text" name="name" class="form-control" />
+                                        <input type="text" name="ten_loai" class="form-control" />
                                     </div>
                                     <button type="submit" name="submit" class="btn btn-success btn-md">Thêm</button>
+                                    <a class="btn btn-danger" href="index.php" role="button">Trở về</a>
                                 </form>
                             </div>
                         </div>
