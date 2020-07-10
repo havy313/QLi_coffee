@@ -13,10 +13,10 @@
             <div class="col-md-4 col-sm-4 col-xs-4">
                 <div class="panel panel-back noti-box">
                     <span class="icon-box bg-color-green set-icon">
-                    <i class="fa fa-bars"></i>
+                    <i class="fa fa-bell-o"></i>
                 </span>
                     <div class="text-box">
-                        <p class="main-text"><a href="/cat/" title="">Quản lý danh mục</a></p>
+                        <p class="main-text"><a href="cat/" title="">Quản lý danh mục</a></p>
                         <p class="text-muted">Có 4 danh mục</p>
                     </div>
                 </div>
@@ -24,10 +24,10 @@
             <div class="col-md-4 col-sm-4 col-xs-4">
                 <div class="panel panel-back noti-box">
                     <span class="icon-box bg-color-blue set-icon">
-                    <i class="fa fa-bell-o"></i>
+                    <i class="fa fa-book"></i>
                 </span>
                     <div class="text-box">
-                        <p class="main-text"><a href="/menu/" title="">Quản lý truyện</a></p>
+                        <p class="main-text"><a href="menu/" title="">Quản lý thực đơn</a></p>
                         <p class="text-muted">Có 20 truyện</p>
                     </div>
                 </div>
@@ -35,11 +35,44 @@
             <div class="col-md-4 col-sm-4 col-xs-4">
                 <div class="panel panel-back noti-box">
                     <span class="icon-box bg-color-brown set-icon">
-                    <i class="fa fa-rocket"></i>
+                    <i class="fa fa-user"></i>
                 </span>
                     <div class="text-box">
-                        <p class="main-text"><a href="/user/" title="">Quản lý người dùng</a></p>
+                        <p class="main-text"><a href="user/" title="">Quản lý người dùng</a></p>
                         <p class="text-muted">Có 5 người dùng</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4">
+                <div class="panel panel-back noti-box">
+                <span class="icon-box bg-color-violet set-icon">
+                <i class="fa fa-users"></i>
+                </span>
+                    <div class="text-box">
+                        <p class="main-text"><a href="Staff/" title="">Quản lý nhân viên</a></p>
+                        <p class="text-muted">Có 20 nhân viên</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4">
+                <div class="panel panel-back noti-box">
+                <span class="icon-box bg-color-red set-icon">
+                <i class="fa fa-bar-chart-o"></i>
+                </span>
+                    <div class="text-box">
+                        <p class="main-text"><a href="revenue/" title="">Quản lý doanh thu</a></p>
+                        <p class="text-muted">Doanh thu 1 ngày</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4">
+                <div class="panel panel-back noti-box">
+                <span class="icon-box bg-color-pink set-icon">
+                <i class="fa fa-phone-square"></i>
+                </span>
+                    <div class="text-box">
+                        <p class="main-text"><a href="contact/" title="">Quản lý liên hệ</a></p>
+                        <p class="text-muted">chủ cửa hàng</p>
                     </div>
                 </div>
             </div>

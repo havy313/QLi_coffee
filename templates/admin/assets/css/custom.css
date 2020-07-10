@@ -100,7 +100,7 @@ background-color: #00CE6F;
 color: #fff;
 }
  .bg-color-blue {
-background-color: #A95DF0;
+background-color: rgba(101, 160, 228, 0.863);
 color: #fff;
 }
   .bg-color-red {
@@ -111,7 +111,14 @@ color: #fff;
 background-color: #B94A00;
 color: #fff;
 }
-
+.bg-color-violet{
+    background-color: violet;
+    color: #fff;
+}
+.bg-color-pink{
+    background-color: pink;
+    color: #fff;
+}
 
  .icon-box-right {
 display: block;
@@ -207,7 +214,7 @@ max-width:170px;
 
 .navbar-cls-top .navbar-brand {
 	color: #fff;
-background: #FC8010;
+background: #009B50;
 width: 260px;
 text-align: center;
 height: 60px;
@@ -215,9 +222,13 @@ font-size: 30px;
 font-weight: 700;
 }
 .active-menu {
-    background-color:#FC8010!important;
+    /* background-color:#FC8010!important; */
+    float: left;
 }
-
+.menu{
+    float: none;
+    
+}
 .arrow {
     float: right;
 }
@@ -267,6 +278,9 @@ font-weight: 700;
 	background:#0A0A0A;
 	outline:0;
 }
+.sidebar-collapse .nav > li > .nav-link a:active{
+    background: #009B50;
+}
 
 .nav-second-level > li > a:before ,
 .nav-third-level > li > a:before {
@@ -305,13 +319,13 @@ font-weight: 700;
 	
 }
 .navbar-cls-top {
-	background:#4D4D4D;
+	background:black;
 	border-bottom:none;
 	
 }
 .navbar-cls-top .navbar-brand:hover {
 
-background: #FC8010;
+background: #009B50;
 color:#fff;
 
 }
@@ -372,8 +386,25 @@ line-height: 1.428571429;
 
    .navbar {
  border-radius: 0px; 
+ background-color: #035731;
 }
-   
+.logo{
+    width: ;
 }
-
+}
+.admin{
+    color: #f5f5f5;
+    padding: 15px;
+    padding-left: 0px;
+    float: left;
+    font-size: 16px;
+    margin-top: 60px;
+}
+.star{
+    font-size: 44px;
+    color: white;
+    font-weight: 700;
+    padding-top: 40px;
+    text-align: center;
+}
 
