@@ -76,7 +76,7 @@
                                              if ($arItem['hinhanh'] != '' ) {
                                                     
                                             ?>
-                                            <img src="/files/<?php echo $arItem['hinhanh'];?>" alt="" height="80px" width="100px" />
+                                            <img src="/files/<?php echo $arItem['hinhanh'];?>" alt="" height="100px" width="100px"/>
                                             <?php 
                                                 }
                                             ?>
