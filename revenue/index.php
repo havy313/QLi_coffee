@@ -23,13 +23,81 @@
                                     <a href="add.php" class="btn btn-success btn-md">Thêm</a>
                                 </div>
                                 <div class="col-sm-6" style="text-align: right;">
-                                    <form method="post" action="">
-                                        <input type="submit" name="search" value="Tìm kiếm" class="btn btn-warning btn-sm" style="float:right" />
-                                        <input type="search" class="form-control input-sm" placeholder="Nhập tên truyện" style="float:right; width: 300px;" />
+                                    <form method="get" action="">
+                                        <input type="submit"  value="Tìm kiếm" class="btn btn-warning btn-sm" style="float:right" />
+                                        <input type="search" name="search" class="form-control input-sm" placeholder="Nhập tên truyện" style="float:right; width: 300px;" />
                                         <div style="clear:both"></div>
                                     </form><br />
                                 </div>
                             </div>
+                            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Tên sản phẩm</th>
+                                        <!-- <th>Giá</th> -->
+                                        <th>Số lượng/Lần</th>
+                                        <th>Tổng sản phẩm</th>
+                                        <!-- <th>Hình ảnh</th> -->
+                                        <th width="250px">Chức năng</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                        $query ='';
+                                        if(isset($_GET['search'])){
+                                            $search = trim($_GET['search']);
+                                            if(($search)){
+                                                $query = "SELECT *, SUM(so_luong) tong_sp FROM doanhthu 
+                                                        WHERE ten_sp = '{$search}' GROUP BY id_sp ";
+                                            } 
+                                        } else {
+                                                $query = "SELECT *, SUM(so_luong) tong_sp FROM doanhthu 
+                                                                GROUP BY id_sp ORDER BY `tong_sp` ASC";
+                                            }
+                                                $result = $mysqli->query($query);
+                                                while ($arItem = mysqli_fetch_assoc($result)) {
+                                                
+                                    ?>
+                                    <tr class="gradeX">
+                                        <td><?php echo $arItem['id_sp'];?></td>
+                                        <td><?php echo $arItem['ten_sp'];?></td>
+                                        <!-- <td><?php echo $arItem['gia_sp'];?></td> -->
+                                        <td><?php echo $arItem['so_luong'];?></td>
+                                        <td><?php echo $arItem['tong_sp'];?></td>
+                                        <!-- <td class="center">
+                                            <?php
+                                             if ($arItem['hinhanh'] != '' ) {
+                                                    
+                                            ?>
+                                            <img src="/files/<?php echo $arItem['hinhanh'];?>" alt="" height="100px" width="100px"/>
+                                            <?php 
+                                                }
+                                            ?>
+                                        </td> -->
+                                        <td class="center">
+                                            <a type="" class="btn" data-toggle="modal" data-target="#staticBackdrop">
+                                                <img src="/templates/admin/assets/img/icondetail.png" class=""></i></a>
+                                            <a href="edit.php?id_sp=<?php echo $arItem['id_sp'] ?>" title="" class="btn btn-primary"><i class="fa fa-edit "></i> Sửa</a>
+                                            <a href="del.php?id_sp=<?php echo $arItem['id_sp']?>" onclick="return confirm('Bạn có thật sự muốn xóa sản phẩm này ?')" title="" class="btn btn-danger"><i class="fa fa-pencil"></i> Xóa</a>
+                                        </td>
+                                    </tr>
+                                    <?php 
+                                            }
+                                    ?>
+                                </tbody>
+                            </table>
+                            <?php 
+                                if(isset($_GET['search'])){
+                            ?>
+                            <div class="row">
+                                <div class="col-sm-12" style="text-align: right;">
+                                    <a href="index.php" title="" class="btn btn-primary"><i class="fa fa-reply"></i> Trở về</a>    
+                                </div>
+                            </div>
+                            <?php 
+                                }
+                            ?>
                             <!-- Button trigger modal -->
                             <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
                             Launch static backdrop modal
@@ -38,6 +106,9 @@
                             <!-- Modal -->
                             <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
+                                <?php
+                                    while ($arItem = mysqli_fetch_assoc($result))
+                                ?>
                                     <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="staticBackdropLabel">Trà Gần Nhau Hơn</h5>
@@ -94,54 +165,6 @@
                                 </div>
                             </div>
                             <!-- End modal -->
-                            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Tên</th>
-                                        <th>Danh mục</th>
-                                        <th>Size</th>
-                                        <th>Giá</th>
-                                        <th>Mô tả</th>
-                                        <th>Hình ảnh</th>
-                                        <th width="160px">Chức năng</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
-                                        $query = "SELECT *, story.name AS name, cat.name AS cat_name FROM story INNER JOIN cat ON story.cat_id = cat.cat_id ORDER BY story_id DESC";
-                                        $result = $mysqli->query($query);
-                                        while ($arItem = mysqli_fetch_assoc($result)) {
-                                           
-                                        
-                                    ?>
-                                    <tr class="gradeX">
-                                        <td><?php echo $arItem['story_id'];?></td>
-                                        <td><?php echo $arItem['name'];?></td>
-                                        <td><?php echo $arItem['cat_name'];?></td>
-                                        <td class="center"><?php echo $arItem['counter'];?></td>
-                                        <td class="center">
-                                            <?php
-                                             if ($arItem['picture'] != '' ) {
-                                                    
-                                            ?>
-                                            <img src="/files/<?php echo $arItem['picture'];?>" alt="" height="80px" width="100px" />
-                                            <?php 
-                                                }
-                                            ?>
-                                        </td>
-                                        <td class="center">
-                                            <a type="" class="btn" data-toggle="modal" data-target="#staticBackdrop">
-                                                <img src="http://qlht.ued.udn.vn/templates/ued/images/icondetail.png" class=""></i></a>
-                                            <a href="edit.php?story_id=<?php echo $arItem['story_id'] ?>" title="" class="btn btn-primary"><i class="fa fa-edit "></i> Sửa</a>
-                                            <a href="del.php?story_id=<?php echo $arItem['story_id']?>" title="" class="btn btn-danger"><i class="fa"></i> Xóa</a>
-                                        </td>
-                                    </tr>
-                                    <?php 
-                                        }
-                                    ?>
-                                </tbody>
-                            </table>
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="dataTables_info" id="dataTables-example_info" style="margin-top:27px">Hiển thị từ 1 đến 5 của 24 truyện</div>

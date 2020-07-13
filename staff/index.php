@@ -27,9 +27,9 @@
                                     <a href="add.php" class="btn btn-success btn-md">Thêm</a>
                                 </div>
                                 <div class="col-sm-6" style="text-align: right;">
-                                    <form method="post" action="">
-                                        <input type="submit" name="search" value="Tìm kiếm" class="btn btn-warning btn-sm" style="float:right" />
-                                        <input type="search" class="form-control input-sm" placeholder="Nhập tên truyện" style="float:right; width: 300px;" />
+                                    <form method="get" action="">
+                                        <input type="submit"  value="Tìm kiếm" class="btn btn-warning btn-sm" style="float:right" />
+                                        <input type="search" name="search" class="form-control input-sm" placeholder="Nhập tên truyện" style="float:right; width: 300px;" />
                                         <div style="clear:both"></div>
                                     </form><br />
                                 </div>
@@ -49,21 +49,31 @@
                                 <tbody>
                                     <!-- lấy ra tất cả danh mục tin -->
                                     <?php 
-                                        $query = 'SELECT * FROM nhanvien INNER JOIN ca ON nhanvien.ca = ca.id_ca
-                                                   ORDER BY nhanvien.id_nhanvien ASC';
+                                        $query ='';
+                                        if(isset($_GET['search'])){
+                                            $search = trim($_GET['search']);
+                                            if(($search)){
+                                                $query = "SELECT * FROM nhanvien
+                                                                    INNER JOIN ca ON nhanvien.id_ca = ca.id_ca   
+                                                            WHERE ten_nhanvien = '{$search}'";
+                                            } 
+                                        } else {
+                                            $query = 'SELECT * FROM nhanvien INNER JOIN ca ON nhanvien.id_ca = ca.id_ca
+                                                                    ORDER BY nhanvien.id_nhanvien ASC';
+                                        }
                                         $result = $mysqli->query($query);
                                         while ($arItem = mysqli_fetch_assoc($result)) {
                                            $id_nhanvien = $arItem['id_nhanvien'];
                                            $ten_nhanvien = $arItem['ten_nhanvien'];
-                                           $ca = $arItem['ca'];
-                                           $time = $arItem['Time'];
+                                           $ca = $arItem['ten_ca'];
+                                           $ngay = $arItem['ngay'];
                                            $phone = $arItem['phone'];
                                     ?>
                                     <tr class="gradeX">
                                         <td><?php echo $id_nhanvien; ?></td>
                                         <td><?php echo $ten_nhanvien; ?></td>
                                         <td><?php echo $ca; ?></td>
-                                        <td><?php echo $time; ?></td>
+                                        <td><?php echo $ngay; ?></td>
                                         <td><?php echo $phone; ?></td>
                                         
                                         <td class="center">
@@ -76,6 +86,17 @@
                                    ?>
                                 </tbody>
                             </table>
+                            <?php 
+                                if(isset($_GET['search'])){
+                            ?>
+                            <div class="row">
+                                <div class="col-sm-12" style="text-align: right;">
+                                    <a href="index.php" title="" class="btn btn-primary"><i class="fa fa-reply"></i> Trở về</a>    
+                                </div>
+                            </div>
+                            <?php 
+                                }
+                            ?>
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="dataTables_info" id="dataTables-example_info" style="margin-top:27px">Hiển thị từ 1 đến 5 của 24 truyện</div>

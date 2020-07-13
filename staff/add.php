@@ -20,13 +20,13 @@
                                 <?php
                                     if(isset($_POST['submit'])){
                                         $ten_nhanvien = $_POST['ten_nhanvien'];
-                                        $ca = $_POST['ca'];
-                                        $time = $_POST['Time'];
+                                        $id_ca = $_POST['id_ca'];
+                                        $ngay = $_POST['ngay'];
                                         $phone = $_POST['phone'];
-                                        $query = "INSERT INTO nhanvien (ten_nhanvien, ca, Time, phone) VALUE ('{$ten_nhanvien}','{$ca}','{$time}', '{$phone}')";
+                                        $query = "INSERT INTO nhanvien (ten_nhanvien, id_ca, ngay, phone) VALUE ('{$ten_nhanvien}','{$id_ca}','{$ngay}', '{$phone}')";
                                         $result = $mysqli->query($query);
                                         if($result){
-                                            header("location:index.php?msg=Thêm dữ liệu thành công");
+                                            header("location:index.php?msg=Thêm nhân viên thành công");
                                             die();
 
                                         }else {
@@ -43,7 +43,7 @@
 
                                     <div class="form-group">
                                         <label>Ca làm</label>
-                                        <select class="form-control" name="id_loai"> 
+                                        <select class="form-control" name="id_ca"> 
                                                 <option value = "">---Chọn ca---</option>
                                                 <?php
                                                     $sql = "SELECT * FROM ca";
@@ -57,8 +57,8 @@
                                             </select>
                                     </div>
                                     <div class="form-group">
-                                        <label>Time</label>
-                                        <input type="text" name="Time" class="form-control" />
+                                        <label>Ngày làm</label>
+                                        <input type="date" name="ngay"></input>                                    
                                     </div>
                                     <div class="form-group">
                                         <label>Phone</label>

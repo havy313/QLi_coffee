@@ -26,10 +26,10 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/inc/leftbar.php';
 
                                 if (isset($_POST['submit'])) {
                                     $ten_nhanvien = $_POST['ten_nhanvien'];
-                                    $ca = $_POST['ca'];
-                                    $time = $_POST['time'];
+                                    $id_ca = $_POST['id_ca'];
+                                    $ngay = $_POST['ngay'];
                                     $phone = $_POST['phone'];
-                                    $query = "UPDATE nhanvien SET ten_nhanvien = '{$ten_nhanvien}', ca = '{$ca}',Time = '{$time}',hinhanh = '{$pictureName}' WHERE id_nhanvien = '{$id_nhanvien}'";
+                                    $query = "UPDATE nhanvien SET ten_nhanvien = '{$ten_nhanvien}', id_ca = '{$id_ca}',ngay = '{$ngay}' WHERE id_nhanvien = '{$id_nhanvien}'";
                                     $result = $mysqli->query($query);
                                     if ($result) {
                                         header("Location: index.php?msg=Sửa dữ liệu thành công!");
@@ -47,18 +47,18 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/inc/leftbar.php';
                                     </div>
                                     <div class="form-group">
                                         <label>Ca</label>
-                                        <select class="form-control" name="ca">
+                                        <select class="form-control" name="id_ca">
                                             <option value="">--Chọn ca làm--</option>
                                             <?php
                                             $sql = "SELECT * FROM ca";
                                             $resultSql = $mysqli->query($sql);
                                             while ($arCat = mysqli_fetch_assoc($resultSql)) {
                                                 $selected = "";
-                                                if ($arProduct['ca'] == $arCat['id_ca']) {
+                                                if ($arProduct['id_ca'] == $arCat['id_ca']) {
                                                     $selected = "selected='selected'";
                                                 }
                                             ?>
-                                                <option <?php echo $selected ?> value="<?php echo $arCat['id_loai'] ?>"><?php echo $arCat['ten_ca'] ?></option>
+                                                <option <?php echo $selected ?> value="<?php echo $arCat['id_ca'] ?>"><?php echo $arCat['ten_ca'] ?></option>
                                             <?php
                                             }
                                             ?>
@@ -66,7 +66,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/inc/leftbar.php';
                                     </div>
                                     <div class="form-group">
                                         <label>Ngày làm </label>
-                                        <input type="datetime-local" name="time" data-date-format="DD MMMM YYYY hh mm ss"></input>
+                                        <input type="date" name="ngay" value="<?php echo $arProduct['ngay'] ?>"></input>
                                     </div>
                                     <div class="form-group">
                                         <label>Phone</label>
