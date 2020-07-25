@@ -478,3 +478,11 @@ line-height: 1.428571429;
     font-size: 24px;
     color: #009B50;
 }
+.exit{
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    z-index: 99;
+    text-indent: -1999px;
+    background: url(../files/iconexit.png) no-repeat center center;
+}

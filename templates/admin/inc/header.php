@@ -38,7 +38,10 @@
                     <div class="col-lg-6 col-md-8 col-12 ">
                         <p class="star"> Starbuck Coffee </p>
                     </div>
-                    <div class="col-lg-3 col-md-2 col-12 admin"> Xin chào, <b>Admin</b> &nbsp; <a href="/auth/logout.php" class="btn btn-danger square-btn-adjust">Đăng xuất</a> </div>
+                    <div class="col-lg-3 col-md-2 col-12 admin"> Xin chào, 
+                        <b>Admin !</b> &nbsp; 
+                        <a href="/auth/logout.php"> 
+                        <img class="exit" src="/files/iconexit.png" title="Đăng xuất"></a> </div>
                 </div>
             </div>
         </nav>
