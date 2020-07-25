@@ -4,11 +4,11 @@
     <div id="page-inner">
         <div class="row">
             <div class="col-md-12">
-                <h2>QUẢN LÝ LIÊN HỆ</h2>
+                <h2 class="section_heading">QUẢN LÝ LIÊN HỆ</h2>
             </div>
         </div>
         <!-- /. ROW  -->
-        <hr />
+      
         <?php
           if (isset($_GET['msg'])){
               echo $_GET['msg'];
@@ -27,7 +27,7 @@
                                 <div class="col-sm-6" style="text-align: right;">
                                     <form method="post" action="">
                                         <input type="submit" name="search" value="Tìm kiếm" class="btn btn-warning btn-sm" style="float:right" />
-                                        <input type="search" class="form-control input-sm" placeholder="Nhập tên truyện" style="float:right; width: 300px;" />
+                                        <input type="search" class="form-control input-sm" placeholder="Tìm kiếm" style="float:right; width: 300px;" />
                                         <div style="clear:both"></div>
                                     </form><br />
                                 </div>
@@ -57,7 +57,7 @@
                                            $content = $arItem['content'];
                                     ?>
                                     <tr class="gradeX">
-                                        <td><?php echo $contact_id; ?></td>
+                                        <td style="text-align: center;"><?php echo $contact_id; ?></td>
                                         <td><?php echo $name; ?></td>
                                         <td><?php echo $email; ?></td>
                                         <td><?php echo $Website; ?></td>

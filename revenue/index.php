@@ -6,11 +6,11 @@
     <div id="page-inner">
         <div class="row">
             <div class="col-md-12">
-                <h2>QUẢN LÝ DOANH THU</h2>
+                <h2 class="section_heading">QUẢN LÝ DOANH THU</h2>
             </div>
         </div>
         <!-- /. ROW  -->
-        <hr />
+       
 
         <div class="row">
             <div class="col-md-12">
@@ -25,7 +25,7 @@
                                 <div class="col-sm-6" style="text-align: right;">
                                     <form method="get" action="">
                                         <input type="submit"  value="Tìm kiếm" class="btn btn-warning btn-sm" style="float:right" />
-                                        <input type="search" name="search" class="form-control input-sm" placeholder="Nhập tên truyện" style="float:right; width: 300px;" />
+                                        <input type="search" name="search" class="form-control input-sm" placeholder="Tìm kiếm" style="float:right; width: 300px;" />
                                         <div style="clear:both"></div>
                                     </form><br />
                                 </div>
@@ -60,11 +60,11 @@
                                                 
                                     ?>
                                     <tr class="gradeX">
-                                        <td><?php echo $arItem['id_sp'];?></td>
+                                        <td style="text-align: center;"><?php echo $arItem['id_sp'];?></td>
                                         <td><?php echo $arItem['ten_sp'];?></td>
                                         <!-- <td><?php echo $arItem['gia_sp'];?></td> -->
-                                        <td><?php echo $arItem['so_luong'];?></td>
-                                        <td><?php echo $arItem['tong_sp'];?></td>
+                                        <td style="text-align: center;"><?php echo $arItem['so_luong'];?></td>
+                                        <td style="text-align: center;"><?php echo $arItem['tong_sp'];?></td>
                                         <!-- <td class="center">
                                             <?php
                                              if ($arItem['hinhanh'] != '' ) {
@@ -111,7 +111,7 @@
                                 ?>
                                     <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="staticBackdropLabel">Trà Gần Nhau Hơn</h5>
+                                        <h5 class="modal-title text-bold" id="staticBackdropLabel">Trà Gần Nhau Hơn</h5>
                                         <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                         </button> -->

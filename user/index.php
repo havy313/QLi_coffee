@@ -6,11 +6,11 @@
     <div id="page-inner">
         <div class="row">
             <div class="col-md-12">
-                <h2>QUẢN LÝ NGƯỜI DÙNG</h2>
+                <h2 class="section_heading">QUẢN LÝ NGƯỜI DÙNG</h2>
             </div>
         </div>
         <!-- /. ROW  -->
-        <hr />
+       
         <?php
           if (isset($_GET['msg'])){
               echo $_GET['msg'];
@@ -29,7 +29,7 @@
                                 <div class="col-sm-6" style="text-align: right;">
                                     <form method="get" action="">
                                         <input type="submit"  value="Tìm kiếm" class="btn btn-warning btn-sm" style="float:right" />
-                                        <input type="search" name="search" class="form-control input-sm" placeholder="Nhập tên truyện" style="float:right; width: 300px;" />
+                                        <input type="search" name="search" class="form-control input-sm" placeholder="Tìm kiếm" style="float:right; width: 300px;" />
                                         <div style="clear:both"></div>
                                     </form><br />
                                 </div>
@@ -63,7 +63,7 @@
                                             $fullname = $arItem['fullname'];
                                         ?>
                                     <tr class="gradeX">
-                                        <td><?php echo $id; ?></td>
+                                        <td style="text-align: center;"><?php echo $id; ?></td>
                                         <td><?php echo $username; ?></td>
                                         <td><?php echo $fullname; ?></td>
                                         <td class="center">

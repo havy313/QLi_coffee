@@ -4,11 +4,11 @@
     <div id="page-inner">
         <div class="row">
             <div class="col-md-12">
-                <h2>TRANG QUẢN TRỊ VIÊN</h2>
+                <h2 class="section_heading">TRANG QUẢN TRỊ VIÊN</h2>
             </div>
         </div>
         <!-- /. ROW  -->
-        <hr />
+       
         <div class="row">
             <div class="col-md-4 col-sm-4 col-xs-4">
                 <div class="panel panel-back noti-box">
@@ -72,7 +72,7 @@
                 </span>
                     <div class="text-box">
                         <p class="main-text"><a href="contact/" title="">Quản lý liên hệ</a></p>
-                        <p class="text-muted" id="demo">chủ cửa hàng</p>
+                        <p class="text-muted" id="demo">Chủ cửa hàng</p>
                     </div>
                 </div>
             </div>
