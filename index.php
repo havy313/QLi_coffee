@@ -28,7 +28,7 @@
                 </span>
                     <div class="text-box">
                         <p class="main-text"><a href="menu/" title="">Quản lý thực đơn</a></p>
-                        <p class="text-muted">Có 20 truyện</p>
+                        <p class="text-muted">Có danh sách các món </p>
                     </div>
                 </div>
             </div>
@@ -72,7 +72,7 @@
                 </span>
                     <div class="text-box">
                         <p class="main-text"><a href="contact/" title="">Quản lý liên hệ</a></p>
-                        <p class="text-muted">chủ cửa hàng</p>
+                        <p class="text-muted" id="demo">chủ cửa hàng</p>
                     </div>
                 </div>
             </div>
@@ -80,5 +80,17 @@
 
     </div>
 </div>
+
+<script>
+   // alert("sadasdasd", document.getElementById("demo"))
+   document.getElementById("item__trangchu").classList.add("nav-item--active")
+   document.getElementById("item__danhmuc").classList.remove("nav-item--active")
+   document.getElementById("item__thucdon").classList.remove("nav-item--active")
+   document.getElementById("item__nguoidung").classList.remove("nav-item--active")
+   document.getElementById("item__doanhthu").classList.remove("nav-item--active")
+   document.getElementById("item__nhanvien").classList.remove("nav-item--active")
+   document.getElementById("item__lienhe").classList.remove("nav-item--active")
+</script>
+
 <!-- /. PAGE WRAPPER  -->
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/inc/footer.php'; ?>

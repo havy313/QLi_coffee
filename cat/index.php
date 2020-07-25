@@ -6,7 +6,7 @@
     <div id="page-inner">
         <div class="row">
             <div class="col-md-12">
-                <h2>Quản lý danh mục</h2>
+                <h2>QUẢN LÍ DANH MỤC</h2>
             </div>
         </div>
         <!-- /. ROW  -->
@@ -113,5 +113,15 @@
     </div>
 
 </div>
+
+<script>
+     document.getElementById("item__trangchu").classList.remove("nav-item--active")
+   document.getElementById("item__danhmuc").classList.add("nav-item--active")
+   document.getElementById("item__thucdon").classList.remove("nav-item--active")
+   document.getElementById("item__nguoidung").classList.remove("nav-item--active")
+   document.getElementById("item__doanhthu").classList.remove("nav-item--active")
+   document.getElementById("item__nhanvien").classList.remove("nav-item--active")
+   document.getElementById("item__lienhe").classList.remove("nav-item--active")
+</script>
 <!-- /. PAGE INNER  -->
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/inc/footer.php'; ?>

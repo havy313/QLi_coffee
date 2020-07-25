@@ -13,8 +13,9 @@
     GENERAL  STYLES    
     =============================================*/
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family:'Roboto', Arial, sans-serif;
 }
+
 
  #wrapper {
     width: 100%;
@@ -69,6 +70,15 @@ p {
    .noti-box {
 min-height: 100px;
 padding: 20px;
+}
+.noti-box:hover{
+    background-color: teal;
+}
+.noti-box:hover a{
+    color: white;
+}
+a:hover{
+    text-decoration: none;
 }
 
     .noti-box .icon-box {
@@ -202,7 +212,7 @@ color: #8d8888;
     MENU STYLES    
     =============================================*/
 
-
+ 
 .user-image {
     margin: 25px auto;
 -webkit-border-radius: 10px;
@@ -211,7 +221,7 @@ border-radius: 10px;
 max-height:170px;
 max-width:170px;
 }
-
+ 
 .navbar-cls-top .navbar-brand {
 	color: #fff;
 background: #009B50;
@@ -222,7 +232,7 @@ font-size: 30px;
 font-weight: 700;
 }
 .active-menu {
-    /* background-color:#FC8010!important; */
+    background-color:#FC8010!important; 
     float: left;
 }
 .menu{
@@ -266,12 +276,47 @@ font-weight: 700;
 	text-shadow:none;
 	
 }
+/* .sidebar-collapse .nav .hi
+{
+    background-color: red !important;
+} */
 .sidebar-collapse > .nav > li > a {
-	padding:15px 10px;
+	/* padding:15px 20px; */
+    display:block;
+    padding-left: 30px;
+    padding: 10px 15px ;
+    line-height: 65px;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    border-bottom: 1px solid black;
+    transition: .4s;
+    }
+{
+    
+   /*  color: cyan; */
+   /*  ;
+    border-left-color: cyan; */
+} 
+
+
+.sidebar-collapse > .nav > .nav-item--active a{
+    padding-left: 50px;
+    color:teal;
+    background: #1e1e1e;
+     border-left-color: teal;
+ }
+ 
+
+.sidebar-collapse > .nav > li:hover  a{
+    padding-left: 50px;
+    color:teal;
+    background: #1e1e1e;
+     border-left-color: teal;
+    
 }
-.sidebar-collapse > .nav > li {
+/* .sidebar-collapse > .nav > li {
 	border-bottom: 1px solid rgba(107, 108, 109, 0.19);
-}
+} */
 .sidebar-collapse .nav > li > a:hover,
 .sidebar-collapse .nav > li > a:focus {
 	
@@ -279,7 +324,7 @@ font-weight: 700;
 	outline:0;
 }
 .sidebar-collapse .nav > li > .nav-link a:active{
-    background: #009B50;
+   /*  background: #009B50; */
 }
 
 .nav-second-level > li > a:before ,
@@ -304,7 +349,7 @@ font-weight: 700;
 	background:#ff0000;
 	top:0px;
 	z-index:10;
-}
+} */
 .nav-second-level  > li:last-child > a:after,
 .nav-third-level  > li:last-child > a:after {
 	height:50%;
@@ -350,6 +395,7 @@ background-color: #FFF;
 .nav > li > a > i {
     margin-right:10px;
 }
+ 
 /*==============================================
     UI ELEMENTS STYLES     
     =============================================*/
@@ -388,9 +434,7 @@ line-height: 1.428571429;
  border-radius: 0px; 
  background-color: #035731;
 }
-.logo{
-    width: ;
-}
+
 }
 .admin{
     color: #f5f5f5;
@@ -407,4 +451,5 @@ line-height: 1.428571429;
     padding-top: 40px;
     text-align: center;
 }
+
 

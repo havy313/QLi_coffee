@@ -1,57 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0f756d22-f343-4a72-9eae-a163712f0e98" name="Default Changelist" comment="" />
+    <list default="true" id="518ef7b3-f950-4429-b67c-ee10c6b098ac" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/util/DatabaseConnectUtil.php" beforeDir="false" afterPath="$PROJECT_DIR$/util/DatabaseConnectUtil.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1f4kGTvQgB8MIPo3marIDMoevVD" />
+  <component name="ProjectId" id="1f4qpRVxnMBiI8B4ceO6DuUQtJf" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0f756d22-f343-4a72-9eae-a163712f0e98" name="Default Changelist" comment="" />
-      <created>1595484657685</created>
+      <changelist id="518ef7b3-f950-4429-b67c-ee10c6b098ac" name="Default Changelist" comment="" />
+      <created>1595487894689</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1595484657685</updated>
-      <workItem from="1595484663443" duration="76000" />
+      <updated>1595487894689</updated>
+      <workItem from="1595487896153" duration="181000" />
+      <workItem from="1595488159560" duration="599000" />
     </task>
     <servers />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="337" y="166" key="com.intellij.ide.util.TipDialog" timestamp="1595484665567">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="337" y="166" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1595484665567" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
   </component>
 </project>
