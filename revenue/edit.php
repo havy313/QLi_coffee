@@ -28,14 +28,23 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/inc/leftbar.php';
 
                                 if (isset($_POST['submit'])) {
                                     $ten_sp = $_POST['ten_sp'];
-                                    // $id_nhap = $_POST['id_nhap'];
-                                    // $id_sp = $_POST['id_sp'];
+                                    
                                     $so_luong = $_POST['so_luong'];
                                     $id_nhanvien = $_POST['id_nhanvien'];
                                     $id_ca = $_POST['id_ca'];
                                     $ngay_mua = $_POST['ngay_mua'];
                                     $picture = $_FILES['hinhanh'];
-                                    // $gia_sp = $_POST['gia_sp'];
+                                    if (isset($picture['name']) && $picture['name'] != '') {
+                                        unlink($_SERVER['DOCUMENT_ROOT'] . '/files/' . $pictureName);
+                                        //Xử lý up hình ảnh
+                                        $fileName = $picture['name'];
+                                        $arFileName = explode('.', $fileName);
+                                        $fileType = strtolower(end($arFileName));
+                                        $pictureName = "menu-" . time() . "." . $fileType;
+                                        $tmpName = $picture['tmp_name'];
+                                        $pathUpload = $_SERVER['DOCUMENT_ROOT'] . '/files/' . $pictureName;
+                                        $resultUpload = move_uploaded_file($tmpName, $pathUpload);
+                                    }
                                     $query = "UPDATE sanpham SET ten_sp = '{$ten_sp}', so_luong = '{$so_luong}', id_nhanvien = {$id_nhanvien}, 
                                                 id_ca = '{$id_ca}', ngay_mua = '{$ngay_mua}' WHERE id_sp = '{$id_sp}'";
                                     $result = $mysqli->query($query);
@@ -59,7 +68,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/inc/leftbar.php';
                                     </div>
                                     <div class="form-group">
                                         <label>Nhân viên</label>
-                                        <select class="form-control" name="id_loai">
+                                        <select class="form-control" name="id_nhanvien">
                                             <option value="">--Nhân viên--</option>
                                             <?php
                                             $sql = "SELECT * FROM nhanvien";
@@ -67,21 +76,23 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/inc/leftbar.php';
                                             while ($arStaff = mysqli_fetch_assoc($resultSql)) {
                                                 $selected = "";
                                                 if ($arProduct['id_nhanvien'] == $arStaff['id_nhanvien']) {
+                                                    $selected = "selected='selected'";
+                                                }
                                             ?>
-                                                <option <?php echo $selected ?> value="<?php echo $arStaff['id_nhanvien'] ?>"><?php echo $arCat['ten_nhanvien'] ?></option>
+                                                <option <?php echo $selected ?> value="<?php echo $arStaff['id_nhanvien'] ?>"><?php echo $arStaff['ten_nhanvien'] ?></option>
                                             <?php
                                                 }  
-                                            }
+                                            
                                             ?>
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label>Ca</label>
-                                        <input type="text" name="gia_sp" value="<?php echo $arProduct['gia_sp'] ?>" class="form-control" />
+                                        <input type="text" name="id_ca" value="<?php echo $arProduct['id_ca'] ?>" class="form-control" />
                                     </div>
                                     <div class="form-group">
                                         <label>Ngày mua</label>
-                                        <input type="text" name="gia_sp" value="<?php echo $arProduct['ngay_mua'] ?>" class="form-control" />
+                                        <input type="text" name="ngay_mua" value="<?php echo $arProduct['ngay_mua'] ?>" class="form-control" />
                                     </div>
                                     <div class="form-group">
                                         <label>Hình ảnh</label>
