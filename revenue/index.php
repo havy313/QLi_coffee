@@ -71,7 +71,7 @@
                                             } 
                                         } else {
                                                 $query = "SELECT *, SUM(so_luong) tong_sp FROM doanhthu 
-                                                                GROUP BY id_sp ORDER BY `id_nhap` giASC LIMIT {$offset}, {$row_count}";
+                                                                GROUP BY id_sp ORDER BY `tong_sp` ASC LIMIT {$offset}, {$row_count}";
                                             }
                                                 $result = $mysqli->query($query);
                                                 while ($arItem = mysqli_fetch_assoc($result)) {
