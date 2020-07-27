@@ -7,7 +7,6 @@
     $resultTSD = $mysqli->query($queryTSD);
     $arTSD = mysqli_fetch_assoc($resultTSD);
     $TongSoDong = $arTSD['TSD'];
-    //Lấy truyện trên một trang
     $row_count = ROW_COUNT;
     //tổng số trang
     $TongSoTrang = ceil($TongSoDong/$row_count);
@@ -122,7 +121,7 @@
                             ?>
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <div class="dataTables_info" id="dataTables-example_info" style="margin-top:27px">Trang <?php echo $current_page; ?> của <?php echo $TongSoTrang; ?> truyện</div>
+                                    <div class="dataTables_info" id="dataTables-example_info" style="margin-top:27px">Trang <?php echo $current_page; ?> của <?php echo $TongSoTrang; ?> trang thực đơn</div>
                                 </div>
                                 <div class="col-sm-6" style="text-align: right;">
                                     <div class="dataTables_paginate paging_simple_numbers" id="dataTables-example_paginate">

@@ -9,7 +9,7 @@ $(document).ready(function() {
         },
         messages: {
             "name": {
-                required: "Nhập tên danh mục truyện",
+                required: "Nhập tên danh mục",
             }
         }
     });
@@ -79,13 +79,13 @@ $(document).ready(function() {
         },
         messages: {
             "name": {
-                required: "Nhập tên truyện",
+                required: "Nhập tên sản phẩm",
             },
             "cat_id": {
-                required: "Chọn danh mục truyện",
+                required: "Chọn danh mục",
             },
             "preview_text": {
-                required: "Nhập mô tả truyện",
+                required: "Nhập mô tả",
             },
         }
     });
