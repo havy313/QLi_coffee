@@ -86,7 +86,7 @@
                                         <td><?php echo $arItem['ten_sp'];?></td>
                                         <td><?php echo $arItem['ten_loai'];?></td>
                                         <td style="text-align: center;"><?php echo $arItem['ten_size'];?></td>
-                                        <td style="text-align: center;"><?php echo $arItem['gia_sp'];?></td>
+                                        <td style="text-align: center;"><?php echo number_format($arItem['gia_sp']); echo "đ";?></td>
                                         <td><?php echo $arItem['mota'];?></td>
                                         <td class="center">
                                             <?php

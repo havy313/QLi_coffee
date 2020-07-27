@@ -11,7 +11,5 @@
 	echo "Có lỗi khi xóa người dùng";
 	die();
 }
-
-
 ?>
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/inc/footer.php'; ?>

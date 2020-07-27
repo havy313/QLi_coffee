@@ -12,7 +12,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Starbucks | Quản lý</title>
+    <title>Starbucks Coffee | Quản lý</title>
     <!-- BOOTSTRAP STYLES-->
     <link href="/templates/admin/assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
@@ -37,7 +37,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-8 col-12 ">
-                        <p class="star"> Starbuck Coffee </p>
+                        <p class="star"> Starbucks Coffee </p>
                     </div>
                     <div class="col-lg-3 col-md-2 col-12 admin"> 
                     <?php

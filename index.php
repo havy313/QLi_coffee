@@ -17,7 +17,7 @@
                 </span>
                     <div class="text-box">
                         <p class="main-text"><a href="cat/" title="">Quản Lý Danh mục</a></p>
-                        <p class="text-muted">Có 4 danh mục</p>
+                        <p class="text-muted">Có 9 danh mục</p>
                     </div>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                 </span>
                     <div class="text-box">
                         <p class="main-text"><a href="menu/" title="">Quản Lý Thực Đơn</a></p>
-                        <p class="text-muted">Có danh sách các món </p>
+                        <p class="text-muted">Danh sách các món</p>
                     </div>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                 </span>
                     <div class="text-box">
                         <p class="main-text"><a href="user/" title="">Quản lý Người Dùng</a></p>
-                        <p class="text-muted">Có 5 người dùng</p>
+                        <p class="text-muted">Có 6 người dùng</p>
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                 </span>
                     <div class="text-box">
                         <p class="main-text"><a href="Staff/" title="">Quản Lý Nhân Viên</a></p>
-                        <p class="text-muted">Có 20 nhân viên</p>
+                        <p class="text-muted">Có 6 nhân viên</p>
                     </div>
                 </div>
             </div>

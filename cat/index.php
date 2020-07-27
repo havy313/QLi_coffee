@@ -23,7 +23,7 @@
     <div id="page-inner">
         <div class="row">
             <div class="col-md-12">
-                <h2 class="section_heading">QUẢN LÍ DANH MỤC</h2>
+                <h2 class="section_heading">QUẢN LÝ DANH MỤC</h2>
             </div>
         </div>
         <!-- /. ROW  -->
