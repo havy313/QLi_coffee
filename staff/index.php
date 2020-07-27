@@ -2,6 +2,24 @@
        
 ?>
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/inc/leftbar.php'; ?>
+<?php
+    //tổng số dòng
+    $queryTSD = "SELECT COUNT(*) AS TSD  FROM nhanvien";
+    $resultTSD = $mysqli->query($queryTSD);
+    $arTSD = mysqli_fetch_assoc($resultTSD);
+    $TongSoDong = $arTSD['TSD'];
+    //Lấy truyện trên một trang
+    $row_count = ROW_COUNT;
+    //tổng số trang
+    $TongSoTrang = ceil($TongSoDong/$row_count);
+    //trang hiện tại
+    $current_page = 1;
+    if(isset($_GET['page'])){
+            $current_page = $_GET['page']; 
+    }
+    //offset
+    $offset = ($current_page-1)* $row_count;
+?>
 <div id="page-wrapper">
     <div id="page-inner">
         <div class="row">
@@ -58,8 +76,8 @@
                                                             WHERE ten_nhanvien = '{$search}'";
                                             } 
                                         } else {
-                                            $query = 'SELECT * FROM nhanvien INNER JOIN ca ON nhanvien.id_ca = ca.id_ca
-                                                                    ORDER BY nhanvien.id_nhanvien ASC';
+                                            $query = "SELECT * FROM nhanvien INNER JOIN ca ON nhanvien.id_ca = ca.id_ca
+                                                                    ORDER BY nhanvien.id_nhanvien ASC LIMIT {$offset}, {$row_count}";
                                         }
                                         $result = $mysqli->query($query);
                                         while ($arItem = mysqli_fetch_assoc($result)) {
@@ -99,18 +117,45 @@
                             ?>
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <div class="dataTables_info" id="dataTables-example_info" style="margin-top:27px"></div>
+                                    <div class="dataTables_info" id="dataTables-example_info" style="margin-top:27px">Trang <?php echo $current_page; ?> của <?php echo $TongSoTrang; ?> truyện</div>
                                 </div>
                                 <div class="col-sm-6" style="text-align: right;">
                                     <div class="dataTables_paginate paging_simple_numbers" id="dataTables-example_paginate">
                                         <ul class="pagination">
-                                            <li class="paginate_button previous disabled" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous"><a href="#">Trang trước</a></li>
-                                            <li class="paginate_button active" aria-controls="dataTables-example" tabindex="0"><a href="#">1</a></li>
-                                            <li class="paginate_button " aria-controls="dataTables-example" tabindex="0"><a href="#">2</a></li>
-                                            <li class="paginate_button " aria-controls="dataTables-example" tabindex="0"><a href="#">3</a></li>
-                                            <li class="paginate_button " aria-controls="dataTables-example" tabindex="0"><a href="#">4</a></li>
-                                            <li class="paginate_button " aria-controls="dataTables-example" tabindex="0"><a href="#">5</a></li>
-                                            <li class="paginate_button next" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_next"><a href="#">Trang tiếp</a></li>
+                                        <?php 
+                                            if($current_page >1 && $TongSoTrang >1){
+                                        ?>
+                                                 <li class="paginate_button previous " aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous"><a href="index.php?page=<?php echo ($current_page -1)?>">Trang trước</a></li>
+                                        <?php       
+                                            }
+                                        ?>
+                                        <?php
+                                            for($i=1; $i<=$TongSoTrang; $i++){  
+                                                if( $i == $current_page){
+                                        ?>
+                                                     <li class="paginate_button active" aria-controls="dataTables-example" tabindex="0"><a href="#"><?php echo $current_page;?></a></li>
+                                        <?php 
+                                            }else{
+                                           
+                                        ?>
+                                           
+                                           
+                                            <li class="paginate_button " aria-controls="dataTables-example" tabindex="0"><a href="index.php?page=<?php echo $i;?>"><?php echo $i;?></a></li>
+                                      
+                                            
+                                        <?php
+                                            }
+                                        ?>
+                                        <?php
+                                        }
+                                        ?>
+                                        <?php 
+                                            if($current_page < $TongSoTrang && $TongSoTrang >1){
+                                        ?>
+                                               <li class="paginate_button next" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_next"><a href="index.php?page=<?php echo ($current_page +1)?>">Trang tiếp</a></li>
+                                        <?php       
+                                            }
+                                        ?>
                                         </ul>
                                     </div>
                                 </div>

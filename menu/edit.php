@@ -2,6 +2,7 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/inc/header.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/inc/leftbar.php';
 ?>
+
 <div id="page-wrapper">
     <div id="page-inner">
         <div class="row">
