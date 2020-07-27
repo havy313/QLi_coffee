@@ -87,7 +87,7 @@
                             ?>
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <div class="dataTables_info" id="dataTables-example_info" style="margin-top:27px">Hiển thị từ 1 đến 5 của 24 truyện</div>
+                                    <div class="dataTables_info" id="dataTables-example_info" style="margin-top:27px"></div>
                                 </div>
                                 <div class="col-sm-6" style="text-align: right;">
                                     <div class="dataTables_paginate paging_simple_numbers" id="dataTables-example_paginate">

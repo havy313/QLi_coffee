@@ -33,7 +33,7 @@ body {
     margin:0px 20px 10px 0px;
     background-color:#f3f3f3!important;
     padding:0px 10px;
-    min-height:1200px;
+    /* min-height:600px; */
 }
 
 .text-center {
@@ -307,7 +307,7 @@ font-weight: 700;
 	/* padding:15px 20px; */
     display:block;
     padding-left: 20px;
-    padding: 5px 10px 0px 15px;
+    padding: 0px 10px 0px 15px;
     line-height: 65px;
     box-sizing: border-box;
     border-top: 1px solid rgba(255, 255, 255, .1);
@@ -439,7 +439,7 @@ line-height: 1.428571429;
      #page-wrapper{
                margin: 0 0 0 260px;
         padding: 0px 20px;
-        min-height: 1200px;
+        /* min-height: 1200px; */
 		
     }
 	
@@ -500,4 +500,8 @@ line-height: 1.428571429;
     z-index: 99;
     text-indent: -1999px;
     background: url(../files/iconexit.png) no-repeat center center;
+}
+thead{
+    background-color:#009B50;
+    color: #fff;
 }
