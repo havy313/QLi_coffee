@@ -46,7 +46,10 @@
                     ?>
                             Xin chào, <b><?php echo $name;?></b>
                     <?php } ?> 
-                    &nbsp; <a href="/auth/logout.php" class="btn btn-danger square-btn-adjust">Đăng xuất</a> </div>
+                    &nbsp; 
+                        <a href="/auth/logout.php"> 
+                        <img class="exit" src="/files/iconexit.png" title="Đăng xuất"></a> 
+                    </div>
                 </div>
             </div>
         </nav>
