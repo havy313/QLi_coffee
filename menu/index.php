@@ -23,11 +23,11 @@
     <div id="page-inner">
         <div class="row">
             <div class="col-md-12">
-                <h2>Quản lý truyện</h2>
+                <h2 class="section_heading">QUẢN LÝ THỰC ĐƠN</h2>
             </div>
         </div>
         <!-- /. ROW  -->
-        <hr />
+        
 
         <div class="row">
             <div class="col-md-12">
@@ -42,7 +42,7 @@
                                 <div class="col-sm-6" style="text-align: right;">
                                     <form method="GET" action="">
                                         <input type="submit"  value="Tìm kiếm" class="btn btn-warning btn-sm" style="float:right" />
-                                        <input type="text" name="search" value= "" class="form-control input-sm" placeholder="Nhập tên truyện" style="float:right; width: 300px;" />
+                                        <input type="text" name="search" value= "" class="form-control input-sm" placeholder="Tìm kiếm" style="float:right; width: 300px;" />
                                         <div style="clear:both"></div>
                                     </form><br />
                                 </div>
@@ -51,7 +51,7 @@
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
+                                        <th >ID</th>
                                         <th>Tên</th>
                                         <th>Danh mục</th>
                                         <th>Size</th>
@@ -83,11 +83,11 @@
                                                 
                                     ?>
                                     <tr class="gradeX">
-                                        <td><?php echo $arItem['id_sp'];?></td>
+                                        <td style="text-align: center;"><?php echo $arItem['id_sp'];?></td>
                                         <td><?php echo $arItem['ten_sp'];?></td>
                                         <td><?php echo $arItem['ten_loai'];?></td>
-                                        <td><?php echo $arItem['ten_size'];?></td>
-                                        <td><?php echo $arItem['gia_sp'];?></td>
+                                        <td style="text-align: center;"><?php echo $arItem['ten_size'];?></td>
+                                        <td style="text-align: center;"><?php echo $arItem['gia_sp'];?></td>
                                         <td><?php echo $arItem['mota'];?></td>
                                         <td class="center">
                                             <?php
@@ -175,5 +175,15 @@
     </div>
 
 </div>
+
+<script>
+     document.getElementById("item__trangchu").classList.remove("nav-item--active")
+   document.getElementById("item__danhmuc").classList.remove("nav-item--active")
+   document.getElementById("item__thucdon").classList.add("nav-item--active")
+   document.getElementById("item__nguoidung").classList.remove("nav-item--active")
+   document.getElementById("item__doanhthu").classList.remove("nav-item--active")
+   document.getElementById("item__nhanvien").classList.remove("nav-item--active")
+   document.getElementById("item__lienhe").classList.remove("nav-item--active")
+</script>
 <!-- /. PAGE INNER  -->
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/inc/footer.php'; ?>

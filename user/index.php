@@ -24,11 +24,11 @@
     <div id="page-inner">
         <div class="row">
             <div class="col-md-12">
-                <h2>Quản lý người dùng</h2>
+                <h2 class="section_heading">QUẢN LÝ NGƯỜI DÙNG</h2>
             </div>
         </div>
         <!-- /. ROW  -->
-        <hr />
+       
         <?php
           if (isset($_GET['msg'])){
               echo $_GET['msg'];
@@ -47,7 +47,7 @@
                                 <div class="col-sm-6" style="text-align: right;">
                                     <form method="get" action="">
                                         <input type="submit"  value="Tìm kiếm" class="btn btn-warning btn-sm" style="float:right" />
-                                        <input type="search" name="search" class="form-control input-sm" placeholder="Nhập tên truyện" style="float:right; width: 300px;" />
+                                        <input type="search" name="search" class="form-control input-sm" placeholder="Tìm kiếm" style="float:right; width: 300px;" />
                                         <div style="clear:both"></div>
                                     </form><br />
                                 </div>
@@ -81,7 +81,7 @@
                                             $fullname = $arItem['fullname'];
                                         ?>
                                     <tr class="gradeX">
-                                        <td><?php echo $id; ?></td>
+                                        <td style="text-align: center;"><?php echo $id; ?></td>
                                         <td><?php echo $username; ?></td>
                                         <td><?php echo $fullname; ?></td>
                                         <td class="center">
@@ -107,7 +107,11 @@
                             ?>
                             <div class="row">
                                 <div class="col-sm-6">
+<<<<<<< HEAD
+                                    <div class="dataTables_info" id="dataTables-example_info" style="margin-top:27px"></div>
+=======
                                     <div class="dataTables_info" id="dataTables-example_info" style="margin-top:27px">Trang <?php echo $current_page; ?> của <?php echo $TongSoTrang; ?> truyện</div>
+>>>>>>> master
                                 </div>
                                 <div class="col-sm-6" style="text-align: right;">
                                     <div class="dataTables_paginate paging_simple_numbers" id="dataTables-example_paginate">
@@ -160,5 +164,16 @@
     </div>
 
 </div>
+
+<script>
+     document.getElementById("item__trangchu").classList.remove("nav-item--active")
+   document.getElementById("item__danhmuc").classList.remove("nav-item--active")
+   document.getElementById("item__thucdon").classList.remove("nav-item--active")
+   document.getElementById("item__nguoidung").classList.add("nav-item--active")
+   document.getElementById("item__doanhthu").classList.remove("nav-item--active")
+   document.getElementById("item__nhanvien").classList.remove("nav-item--active")
+   document.getElementById("item__lienhe").classList.remove("nav-item--active")
+</script>
+
 <!-- /. PAGE INNER  -->
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/inc/footer.php'; ?>

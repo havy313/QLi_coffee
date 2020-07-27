@@ -24,11 +24,11 @@
     <div id="page-inner">
         <div class="row">
             <div class="col-md-12">
-                <h2>Quản lý danh mục</h2>
+                <h2 class="section_heading">QUẢN LÍ DANH MỤC</h2>
             </div>
         </div>
         <!-- /. ROW  -->
-        <hr />
+       
         <?php
           if (isset($_GET['msg'])){
               echo $_GET['msg'];
@@ -47,7 +47,7 @@
                                 <div class="col-sm-6" style="text-align: right;">
                                     <form method="get" action="">
                                         <input type="submit" value="Tìm kiếm" class="btn btn-warning btn-sm" style="float:right" />
-                                        <input type="search" name="search" class="form-control input-sm" placeholder="Nhập tên loại" style="float:right; width: 300px;" />
+                                        <input type="search" name="search" class="form-control input-sm" placeholder="Tìm kiếm" style="float:right; width: 300px;" />
                                         <div style="clear:both"></div>
                                     </form><br />
                                 </div>
@@ -79,7 +79,7 @@
                                            $ten_loai = $arItem['ten_loai'];
                                     ?>
                                     <tr class="gradeX">
-                                        <td><?php echo $id_loai; ?></td>
+                                        <td style="text-align: center;"><?php echo $id_loai; ?></td>
                                         <td><?php echo $ten_loai; ?></td>
                                         
                                         <td class="center">
@@ -158,5 +158,15 @@
     </div>
 
 </div>
+
+<script>
+     document.getElementById("item__trangchu").classList.remove("nav-item--active")
+   document.getElementById("item__danhmuc").classList.add("nav-item--active")
+   document.getElementById("item__thucdon").classList.remove("nav-item--active")
+   document.getElementById("item__nguoidung").classList.remove("nav-item--active")
+   document.getElementById("item__doanhthu").classList.remove("nav-item--active")
+   document.getElementById("item__nhanvien").classList.remove("nav-item--active")
+   document.getElementById("item__lienhe").classList.remove("nav-item--active")
+</script>
 <!-- /. PAGE INNER  -->
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/inc/footer.php'; ?>

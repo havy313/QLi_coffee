@@ -277,7 +277,7 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
-  background-color: #fff;
+  background-color: #f3f3f3;
 }
 input,
 button,
@@ -288,12 +288,12 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #428bca;
+  color: #009B50;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #2a6496;
+  color: #009B50;
   text-decoration: underline;
 }
 a:focus {
@@ -499,13 +499,13 @@ cite {
   text-align: justify;
 }
 .text-muted {
-  color: #999;
+  color: #aaa;
 }
 .text-primary {
-  color: #428bca;
+  color: #009B50;
 }
 a.text-primary:hover {
-  color: #3071a9;
+  color: #009B50;
 }
 .text-success {
   color: #3c763d;
@@ -533,10 +533,10 @@ a.text-danger:hover {
 }
 .bg-primary {
   color: #fff;
-  background-color: #428bca;
+  background-color: #009B50;
 }
 a.bg-primary:hover {
-  background-color: #3071a9;
+  background-color: #009B50;
 }
 .bg-success {
   background-color: #dff0d8;
@@ -1405,7 +1405,7 @@ table {
   background-color: transparent;
 }
 th {
-  text-align: left;
+  text-align: center;
 }
 .table {
   width: 100%;
@@ -1461,15 +1461,16 @@ th {
 }
 .table-bordered > thead > tr > th,
 .table-bordered > thead > tr > td {
-  border-bottom-width: 2px;
+  border-bottom-width: 1px;
 }
 .table-striped > tbody > tr:nth-child(odd) > td,
 .table-striped > tbody > tr:nth-child(odd) > th {
-  background-color: #f9f9f9;
+  background-color:#d0e9c6;
+  ;
 }
 .table-hover > tbody > tr:hover > td,
 .table-hover > tbody > tr:hover > th {
-  background-color: #f5f5f5;
+  background:#d4e9e2;
 }
 table col[class*="col-"] {
   position: static;
@@ -4143,7 +4144,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   padding: 6px 12px;
   margin-left: -1px;
   line-height: 1.42857143;
-  color: #428bca;
+  color: #009B50;
   text-decoration: none;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -4163,7 +4164,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .pagination > li > span:hover,
 .pagination > li > a:focus,
 .pagination > li > span:focus {
-  color: #2a6496;
+  color: #009B50;
   background-color: #eee;
   border-color: #ddd;
 }
@@ -4176,8 +4177,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   z-index: 2;
   color: #fff;
   cursor: default;
-  background-color: #428bca;
-  border-color: #428bca;
+  background-color: #009B50;
+  border-color: #009B50;
 }
 .pagination > .disabled > span,
 .pagination > .disabled > span:hover,
@@ -4291,11 +4292,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   background-color: #808080;
 }
 .label-primary {
-  background-color: #428bca;
+  background-color: #009B50;
 }
 .label-primary[href]:hover,
 .label-primary[href]:focus {
-  background-color: #3071a9;
+  background-color: #009B50;
 }
 .label-success {
   background-color: #5cb85c;
@@ -4358,7 +4359,7 @@ a.badge:focus {
 }
 a.list-group-item.active > .badge,
 .nav-pills > .active > a > .badge {
-  color: #428bca;
+  color: #009B50;
   background-color: #fff;
 }
 .nav-pills > li > a > .badge {
@@ -4530,7 +4531,7 @@ a.thumbnail.active {
   line-height: 20px;
   color: #fff;
   text-align: center;
-  background-color: #428bca;
+  background-color: #009B50;
   -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
           box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
   -webkit-transition: width .6s ease;
@@ -4644,8 +4645,8 @@ a.list-group-item.active:hover,
 a.list-group-item.active:focus {
   z-index: 2;
   color: #fff;
-  background-color: #428bca;
-  border-color: #428bca;
+  background-color: #009B50;
+  border-color: #009B50;
 }
 a.list-group-item.active .list-group-item-heading,
 a.list-group-item.active:hover .list-group-item-heading,
@@ -4691,7 +4692,7 @@ a.list-group-item-info .list-group-item-heading {
 }
 a.list-group-item-info:hover,
 a.list-group-item-info:focus {
-  color: #31708f;
+  color: #009B50;
   background-color: #c4e3f3;
 }
 a.list-group-item-info.active,
@@ -4965,18 +4966,18 @@ a.list-group-item-danger.active:focus {
   border-bottom-color: #ddd;
 }
 .panel-primary {
-  border-color: #428bca;
+  border-color: #009B50;
 }
 .panel-primary > .panel-heading {
   color: #fff;
-  background-color: #428bca;
-  border-color: #428bca;
+  background-color: #009B50;
+  border-color: #009B50;
 }
 .panel-primary > .panel-heading + .panel-collapse .panel-body {
-  border-top-color: #428bca;
+  border-top-color: #009B50;
 }
 .panel-primary > .panel-footer + .panel-collapse .panel-body {
-  border-bottom-color: #428bca;
+  border-bottom-color: #009B50;
 }
 .panel-success {
   border-color: #d6e9c6;

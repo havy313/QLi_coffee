@@ -13,26 +13,27 @@
     GENERAL  STYLES    
     =============================================*/
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family:'Roboto', Arial, sans-serif;
 }
+
 
  #wrapper {
     width: 100%;
-    background:#202020;
+    background:#d4e9e2;
 }
 
 #page-wrapper {
     padding: 15px 15px;
     min-height: 600px;
-    background:#F3F3F3;
+    background:#f3f3f3;
    
 }
 #page-inner {
     width:100%;
-    margin:10px 20px 10px 0px;
-    background-color:#fff!important;
-    padding:10px;
-    min-height:1200px;
+    margin:0px 20px 10px 0px;
+    background-color:#f3f3f3!important;
+    padding:0px 10px;
+    /* min-height:600px; */
 }
 
 .text-center {
@@ -42,7 +43,9 @@ body {
     border:1px solid #f3f3f3;
 }
 h2 {
-    color: #f00;
+    margin: 10px 0 20px;
+    line-height: 1.6;
+    color: #009B50;
 }
 h4 {
     padding-top:10px;
@@ -63,12 +66,42 @@ p {
    DASHBOARD STYLES    
     =============================================*/
 .panel-back {
-    background-color:#F8F8F8;
+    background-color:#f3f3f3;
 
 }
+.noti-box a{
+    color: #009B50;
+    transition: all .6s ease-out;
+}
+.noti-box:hover a{
+    color: #fff;
+}
    .noti-box {
-min-height: 100px;
-padding: 20px;
+    min-height: 100px;
+    padding: 20px;
+    border: 2px solid #009B50;
+    border-radius: 4px;
+   
+    
+    background: linear-gradient(to right,#009B50 50%, #fff 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .8s ease-out;
+}
+.noti-box:hover{
+    background-position: left bottom;
+    
+}
+
+.noti-box .text-muted{
+    color:#0ebd82;
+    transition: all .6s ease-out;
+}
+.noti-box:hover .text-muted {
+    color: #fff;
+  } 
+a:hover{
+    text-decoration: none;
 }
 
     .noti-box .icon-box {
@@ -86,7 +119,7 @@ font-size: 40px;
     margin: 0 0 3px;
 }
 .main-text {
-    font-size: 25px;
+    font-size: 22px;
     font-weight:600;
 }
 .set-icon {
@@ -202,7 +235,7 @@ color: #8d8888;
     MENU STYLES    
     =============================================*/
 
-
+ 
 .user-image {
     margin: 25px auto;
 -webkit-border-radius: 10px;
@@ -211,9 +244,9 @@ border-radius: 10px;
 max-height:170px;
 max-width:170px;
 }
-
+ 
 .navbar-cls-top .navbar-brand {
-	color: #fff;
+color: #fff;
 background: #009B50;
 width: 260px;
 text-align: center;
@@ -222,7 +255,7 @@ font-size: 30px;
 font-weight: 700;
 }
 .active-menu {
-    /* background-color:#FC8010!important; */
+    background-color:#FC8010!important; 
     float: left;
 }
 .menu{
@@ -261,25 +294,57 @@ font-weight: 700;
 	padding:0;
 }
 .sidebar-collapse .nav > li > a {
-	color:#fff;
-	background:#202020;
+	color:#009B50;
+	background:#d4e9e2;
 	text-shadow:none;
 	
 }
+/* .sidebar-collapse .nav .hi
+{
+    background-color: red !important;
+} */
 .sidebar-collapse > .nav > li > a {
-	padding:15px 10px;
+	/* padding:15px 20px; */
+    display:block;
+    padding-left: 20px;
+    padding: 0px 10px 0px 15px;
+    line-height: 65px;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    border-bottom: 1px solid #d4e9e2;
+    font-weight: 700;
+    font-size: 14px;
+    transition: .4s;
+    }
+
+
+
+.sidebar-collapse > .nav > .nav-item--active a{
+    padding-left: 30px;
+    color:#fff;
+    background: #009B50;
+    border-left-color: #009B50;
+ }
+ 
+
+.sidebar-collapse > .nav > li:hover  a{
+    padding-left: 30px;
+    color:#fff;
+    background: #009B50;
+     border-left-color: #009B50;
+    
 }
-.sidebar-collapse > .nav > li {
+/* .sidebar-collapse > .nav > li {
 	border-bottom: 1px solid rgba(107, 108, 109, 0.19);
-}
+} */
 .sidebar-collapse .nav > li > a:hover,
 .sidebar-collapse .nav > li > a:focus {
 	
-	background:#0A0A0A;
+	background:#009B50;
 	outline:0;
 }
 .sidebar-collapse .nav > li > .nav-link a:active{
-    background: #009B50;
+   /*  background: #009B50; */
 }
 
 .nav-second-level > li > a:before ,
@@ -304,7 +369,7 @@ font-weight: 700;
 	background:#ff0000;
 	top:0px;
 	z-index:10;
-}
+} */
 .nav-second-level  > li:last-child > a:after,
 .nav-third-level  > li:last-child > a:after {
 	height:50%;
@@ -350,6 +415,7 @@ background-color: #FFF;
 .nav > li > a > i {
     margin-right:10px;
 }
+ 
 /*==============================================
     UI ELEMENTS STYLES     
     =============================================*/
@@ -372,8 +438,8 @@ line-height: 1.428571429;
  @media(min-width:768px) {
      #page-wrapper{
                margin: 0 0 0 260px;
-        padding: 15px 30px;
-        min-height: 1200px;
+        padding: 0px 20px;
+        /* min-height: 1200px; */
 		
     }
 	
@@ -388,9 +454,7 @@ line-height: 1.428571429;
  border-radius: 0px; 
  background-color: #035731;
 }
-.logo{
-    width: ;
-}
+
 }
 .admin{
     color: #f5f5f5;
@@ -407,4 +471,37 @@ line-height: 1.428571429;
     padding-top: 40px;
     text-align: center;
 }
-
+.section_heading{
+    padding-top: 20px;
+    float: left;
+    font-weight: 700;
+    position: relative;
+    margin-bottom: 30px;
+    margin-top: 0;
+    font-size: 24px;
+    color: #009B50;
+}
+.section_heading:after {
+    content: '';
+    height: 4px;
+    background: #191919;
+    width: 50%;
+    display: block;
+}
+.text-bold{
+    font-weight: bold;
+    font-size: 24px;
+    color: #009B50;
+}
+.exit{
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    z-index: 99;
+    text-indent: -1999px;
+    background: url(../files/iconexit.png) no-repeat center center;
+}
+thead{
+    background-color:#009B50;
+    color: #fff;
+}
