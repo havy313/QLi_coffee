@@ -1,7 +1,7 @@
 ﻿<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/inc/header.php'; ?>
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/inc/leftbar.php'; ?>
 <div id="page-wrapper">
-    <div id="page-inner">
+    <div id="page-inner" >
         <div class="row">
             <div class="col-md-12">
                 <h2 class="section_heading">TRANG QUẢN TRỊ VIÊN</h2>
@@ -16,7 +16,7 @@
                     <i class="fa fa-bell-o"></i>
                 </span>
                     <div class="text-box">
-                        <p class="main-text"><a href="cat/" title="">Quản lý danh mục</a></p>
+                        <p class="main-text"><a href="cat/" title="">Quản Lý Danh mục</a></p>
                         <p class="text-muted">Có 4 danh mục</p>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
                     <i class="fa fa-book"></i>
                 </span>
                     <div class="text-box">
-                        <p class="main-text"><a href="menu/" title="">Quản lý thực đơn</a></p>
+                        <p class="main-text"><a href="menu/" title="">Quản Lý Thực Đơn</a></p>
                         <p class="text-muted">Có danh sách các món </p>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                     <i class="fa fa-user"></i>
                 </span>
                     <div class="text-box">
-                        <p class="main-text"><a href="user/" title="">Quản lý người dùng</a></p>
+                        <p class="main-text"><a href="user/" title="">Quản lý Người Dùng</a></p>
                         <p class="text-muted">Có 5 người dùng</p>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                 <i class="fa fa-users"></i>
                 </span>
                     <div class="text-box">
-                        <p class="main-text"><a href="Staff/" title="">Quản lý nhân viên</a></p>
+                        <p class="main-text"><a href="Staff/" title="">Quản Lý Nhân Viên</a></p>
                         <p class="text-muted">Có 20 nhân viên</p>
                     </div>
                 </div>
@@ -60,7 +60,7 @@
                 <i class="fa fa-bar-chart-o"></i>
                 </span>
                     <div class="text-box">
-                        <p class="main-text"><a href="revenue/" title="">Quản lý doanh thu</a></p>
+                        <p class="main-text"><a href="revenue/" title="">Quản Lý Doanh Thu</a></p>
                         <p class="text-muted">Doanh thu 1 ngày</p>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                 <i class="fa fa-phone-square"></i>
                 </span>
                     <div class="text-box">
-                        <p class="main-text"><a href="contact/" title="">Quản lý liên hệ</a></p>
+                        <p class="main-text"><a href="contact/" title="">Quản Lý Liên Hệ</a></p>
                         <p class="text-muted" id="demo">Chủ cửa hàng</p>
                     </div>
                 </div>
