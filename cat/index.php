@@ -81,9 +81,9 @@
                                         <td style="text-align: center;"><?php echo $id_loai; ?></td>
                                         <td><?php echo $ten_loai; ?></td>
                                         
-                                        <td class="center">
-                                            <a href="edit.php?id=<?php echo $id_loai; ?>" title="" class="btn btn-primary"><i class="fa fa-edit "></i> Sửa</a>
-                                            <a href="del.php?id=<?php echo $id_loai; ?>" onclick="return confirm('Bạn có thật sự muốn xóa danh mục này?')" title="" class="btn btn-danger"><i class="fa fa-pencil"></i> Xóa</a>
+                                        <td class="text-center">
+                                            <a href="edit.php?id=<?php echo $id_loai; ?>" title="" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+                                            <a href="del.php?id=<?php echo $id_loai; ?>" onclick="return confirm('Bạn có thật sự muốn xóa danh mục này?')" title="" class="btn btn-danger"><i class="fa fa-trash-o"></i></a>
                                         </td>
                                     </tr>
                                    <?php

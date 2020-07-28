@@ -141,10 +141,11 @@
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title text-bold" id="staticBackdropLabel"><?php echo $arItem['ten_sp'];?></h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
+                                            <span aria-hidden="true">&times;</span>
                                         </button>
+                                        <h5 class="modal-title text-bold" id="staticBackdropLabel"><?php echo $arItem['ten_sp'];?></h5>
+                                        
                                     </div>
                                     <div class="modal-body">
                                     <table class="table table-striped table-bordered table-hover">
@@ -193,7 +194,7 @@
                                     <p>Tổng: <span><?php echo number_format($tong); echo "đ";?></span></p> 
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                        <!-- <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button> -->
                                         <!-- <button type="button" class="btn btn-primary">Understood</button> -->
                                     </div>
                                     </div>
