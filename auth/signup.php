@@ -97,7 +97,7 @@
 					</div>
 					<?php if($messagePass) echo "<p style='color: red'>$messagePass</p>"?>
 					<div class="row align-items-center remember">
-						<input type="checkbox" required="required">I accept the <a href="#">Terms of Use </a> & <a href="#"> Privacy Policy</a>
+						<input type="checkbox" required="required">I accept the <a href="#">Terms of Use</a> & <a href="#"> Privacy Policy</a>
 					</div>
 					<div class="form-group">
 						<input type="submit" name="submit" value="Register Now" class="btn btn-success btn-lg btn-block">

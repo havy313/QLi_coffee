@@ -87,4 +87,8 @@ color: white;
 
 .links a{
 margin-left: 4px;
+color: #009B50;
+}
+.d-flex a{
+    color:#009B50 ;
 }
