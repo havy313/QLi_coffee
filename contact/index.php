@@ -44,7 +44,7 @@
                                 <div class="col-sm-6" style="text-align: right;">
                                     <form method="get" action="">
                                         <input type="submit" name="search" value="Tìm kiếm" class="btn btn-warning btn-sm" style="float:right" />
-                                        <input type="search" name="search" class="form-control input-sm" placeholder="Tìm kiếm" style="float:right; width: 300px;" />
+                                        <input type="search" name="search" class="form-control input-sm" placeholder="Nhập tên hoặc email liên hệ" style="float:right; width: 300px;" />
                                         <div style="clear:both"></div>
                                     </form><br />
                                 </div>
@@ -71,6 +71,10 @@
                                             if(($search)){
                                                 $query = "SELECT * FROM contact
                                                               WHERE name = '{$search}'";
+                                                if(mysqli_fetch_assoc($mysqli->query($query)) == 0){
+                                                    $query = "SELECT * FROM contact
+                                                              WHERE email = '{$search}'";
+                                                }
                                             } 
                                         } else {
                                         $query = "SELECT * FROM contact ORDER BY contact_id ASC LIMIT {$offset}, {$row_count}";

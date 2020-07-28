@@ -41,7 +41,7 @@
                                 <div class="col-sm-6" style="text-align: right;">
                                     <form method="GET" action="">
                                         <input type="submit"  value="Tìm kiếm" class="btn btn-warning btn-sm" style="float:right" />
-                                        <input type="text" name="search" value= "" class="form-control input-sm" placeholder="Tìm kiếm" style="float:right; width: 300px;" />
+                                        <input type="text" name="search" value= "" class="form-control input-sm" placeholder="Nhập tên hoặc danh mục của sản phẩm" style="float:right; width: 300px;" />
                                         <div style="clear:both"></div>
                                     </form><br />
                                 </div>
@@ -70,15 +70,21 @@
                                                                     INNER JOIN loai ON sanpham.id_loai = loai.id_loai) 
                                                                     INNER JOIN size ON sanpham.id_size = size.id_size) 
                                                             WHERE ten_sp = '{$search}'";
+                                                if(mysqli_fetch_assoc($mysqli->query($query)) == 0){
+                                                    $query = "SELECT * FROM ((sanpham
+                                                                        INNER JOIN loai ON sanpham.id_loai = loai.id_loai) 
+                                                                        INNER JOIN size ON sanpham.id_size = size.id_size) 
+                                                                        WHERE ten_loai = '{$search}'";
+                                                }
                                             } 
                                         } else {
                                                 $query = "SELECT * FROM((sanpham 
-                                                INNER JOIN loai ON sanpham.id_loai = loai.id_loai) 
-                                                INNER JOIN size ON sanpham.id_size = size.id_size) 
-                                                ORDER BY sanpham.id_sp ASC LIMIT {$offset}, {$row_count}";
+                                                                        INNER JOIN loai ON sanpham.id_loai = loai.id_loai) 
+                                                                        INNER JOIN size ON sanpham.id_size = size.id_size) 
+                                                                        ORDER BY sanpham.id_sp ASC LIMIT {$offset}, {$row_count}";
                                             }
-                                                $result = $mysqli->query($query);
-                                                while ($arItem = mysqli_fetch_assoc($result)) {
+                                            $result = $mysqli->query($query);
+                                            while ($arItem = mysqli_fetch_assoc($result)) {
                                                 
                                     ?>
                                     <tr class="gradeX">

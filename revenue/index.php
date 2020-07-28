@@ -37,7 +37,7 @@
                                 <div class="col-sm-12" style="text-align: right;">
                                     <form method="get" action="">
                                         <input type="submit"  value="Tìm kiếm" class="btn btn-warning btn-sm" style="float:right" />
-                                        <input type="search" name="search" class="form-control input-sm" placeholder="Tìm kiếm" style="float:right; width: 300px;" />
+                                        <input type="search" name="search" class="form-control input-sm" placeholder="Nhập tên hoặc danh mục của sản phẩm" style="float:right; width: 300px;" />
                                         <div style="clear:both"></div>
                                     </form><br />
                                 </div>
@@ -60,9 +60,18 @@
                                         if(isset($_GET['search'])){
                                             $search = trim($_GET['search']);
                                             if(($search)){
-                                                $query = "SELECT *, SUM(so_luong) tong_sp FROM doanhthu dt 
-                                                            inner join sanpham sp on dt.id_sp = sp.id_sp
-                                                            WHERE dt.ten_sp = '{$search}' GROUP BY dt.id_sp";
+                                                $query = "SELECT *, SUM(so_luong) tong_sp FROM ((doanhthu dt 
+                                                                    inner join sanpham sp on dt.id_sp = sp.id_sp)
+                                                                    inner join loai  on  sp.id_loai= loai.id_loai)
+                                                                    WHERE dt.ten_sp = '{$search}'  
+                                                                    GROUP BY dt.id_sp ORDER BY `tong_sp` DESC";
+                                                if(mysqli_fetch_assoc($mysqli->query($query)) == 0){
+                                                    $query = "SELECT *, SUM(so_luong) tong_sp FROM ((doanhthu dt 
+                                                                        inner join sanpham sp on dt.id_sp = sp.id_sp)
+                                                                        inner join loai  on  sp.id_loai= loai.id_loai)
+                                                                        WHERE loai.ten_loai = '{$search}' 
+                                                                        GROUP BY dt.id_sp ORDER BY `tong_sp` DESC "; 
+                                                }
                                             } 
                                         } else {
                                                 $query = "SELECT *, SUM(so_luong) tong_sp FROM ((doanhthu dt 
@@ -75,7 +84,6 @@
                                                     $id_sp =  $arItem['id_sp'];
                                     ?>
                                     <tr class="gradeX">
-                                    <!-- <form method ="post" action=""> -->
                                         <td style="text-align: center;"><?php echo $id_sp;?></td>
                                             <td><?php echo $arItem['ten_sp'];?></td>
                                             <td><?php echo $arItem['ten_loai']?></td>
@@ -102,12 +110,8 @@
                                                         <img src="/templates/admin/assets/img/icondetail.png" class=""></i>
                                                     </a>
                                                 <!-- </input> -->
-                                                
                                             </td>
-                                            
-                                            <!-- </form> -->
                                         </tr>
-                                   
                                     <?php 
                                             }
                                     ?>

@@ -46,7 +46,7 @@
                                 <div class="col-sm-6" style="text-align: right;">
                                     <form method="get" action="">
                                         <input type="submit"  value="Tìm kiếm" class="btn btn-warning btn-sm" style="float:right" />
-                                        <input type="search" name="search" class="form-control input-sm" placeholder="Tìm kiếm" style="float:right; width: 300px;" />
+                                        <input type="search" name="search" class="form-control input-sm" placeholder="Nhập username hoặc fullname của người dùng" style="float:right; width: 300px;" />
                                         <div style="clear:both"></div>
                                     </form><br />
                                 </div>
@@ -69,6 +69,9 @@
                                             $search = trim($_GET['search']);
                                             if(($search)){
                                                 $query = "SELECT * FROM users WHERE username = '{$search}'";
+                                                if(mysqli_fetch_assoc($mysqli->query($query)) == 0){
+                                                    $query = "SELECT * FROM users WHERE fullname = '{$search}'";
+                                                }
                                             } 
                                         } else {
                                             $query = "SELECT * FROM users ORDER BY id ASC LIMIT {$offset}, {$row_count}";
