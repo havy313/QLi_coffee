@@ -80,9 +80,9 @@
                                         <td><?php echo $Website; ?></td>
                                         <td><?php echo $content; ?></td>
                                         
-                                        <td class="center">
+                                        <td class="text-center">
                                             
-                                            <a href="del.php?id=<?php echo $contact_id; ?>" onclick = "return confirm('Bạn thực sự muốn xóa danh mục này?')" title="" class="btn btn-danger"><i class="fa fa-pencil"></i> Xóa</a>
+                                            <a href="del.php?id=<?php echo $contact_id; ?>" onclick = "return confirm('Bạn thực sự muốn xóa danh mục này?')" title="" class="btn btn-danger"><i class="fa fa-trash-o"></i></a>
                                         </td>
                                     </tr>
                                    <?php
