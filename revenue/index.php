@@ -83,7 +83,7 @@
                                                 ?>
                                             </td>
                                             <td style="text-align: center;"><?php echo $arItem['tong_sp'];?></td>
-                                            <td class="center">
+                                            <td style="text-align: center;">
                                                 <?php
                                                 if ($arItem['hinhanh'] != '' ) {
                                                         
@@ -159,44 +159,41 @@
                                                 <th>Nhân viên</th>                                               
                                             </tr>
                                         </thead>
-                                        <?php
-                                            $queryDB = "SELECT * FROM ((( doanhthu dt INNER JOIN sanpham sp ON dt.id_sp = sp.id_sp)
-                                                                                      INNER JOIN nhanvien nv ON nv.id_nhanvien = dt.id_nhanvien)
-                                                                                      INNER JOIN ca ON dt.id_ca = ca.id_ca)
-                                                                        WHERE dt.id_sp = $id_sp";
-                                            $resultDB = $mysqli->query($queryDB);
-                                            $tong = 0;       
-                                            while ($arItem = mysqli_fetch_assoc($resultDB)){
-                                                $so_luong = $arItem['so_luong'];
-                                                $gia_sp   = $arItem['gia_sp'];
-                                                $gia_tong = $arItem['gia_sp'] * $arItem['so_luong'];
-                                                $ngay_mua = $arItem['ngay_mua'];
-                                                $ca = $arItem['ten_ca'];
-                                                $nhan_vien = $arItem['ten_nhanvien'];
-                                                $tong += $gia_tong;
-                                        ?>   
                                         <tbody>
-                                            <tr class="gradeX">
-                                                <th><?php echo $so_luong;?></th>
-                                                <th><?php echo number_format($gia_sp); echo "đ";?></th>
-                                                <th><?php echo number_format($gia_tong); echo "đ";?></th>
-                                                <th><?php echo $ngay_mua;?></th>
-                                                <th><?php echo $ca;?></th>
-                                                <th><?php echo $nhan_vien;?></th>
-                                            </tr>
-
-                                        </tbody>
-                                        <?php
-                                            }
-                                        ?>
+                                            <?php
+                                                $queryDB = "SELECT * FROM ((( doanhthu dt INNER JOIN sanpham sp ON dt.id_sp = sp.id_sp)
+                                                                                        INNER JOIN nhanvien nv ON nv.id_nhanvien = dt.id_nhanvien)
+                                                                                        INNER JOIN ca ON dt.id_ca = ca.id_ca)
+                                                                            WHERE dt.id_sp = $id_sp";
+                                                $resultDB = $mysqli->query($queryDB);
+                                                $tong = 0;       
+                                                while ($arItem = mysqli_fetch_assoc($resultDB)){
+                                                    $so_luong = $arItem['so_luong'];
+                                                    $gia_sp   = $arItem['gia_sp'];
+                                                    $gia_tong = $arItem['gia_sp'] * $arItem['so_luong'];
+                                                    $ngay_mua = $arItem['ngay_mua'];
+                                                    $ca = $arItem['ten_ca'];
+                                                    $nhan_vien = $arItem['ten_nhanvien'];
+                                                    $tong += $gia_tong;
+                                            ?>   
+                                            
+                                                <tr class="gradeX">
+                                                    <th><?php echo $so_luong;?></th>
+                                                    <th><?php echo number_format($gia_sp); echo "đ";?></th>
+                                                    <th><?php echo number_format($gia_tong); echo "đ";?></th>
+                                                    <th><?php echo $ngay_mua;?></th>
+                                                    <th><?php echo $ca;?></th>
+                                                    <th><?php echo $nhan_vien;?></th>
+                                                </tr>
+                                            <?php
+                                                }
+                                            ?>
+                                         </tbody>
                                     </table>
                                    
                                     <p class="text_tong"><b>Tổng: </b><span><?php echo number_format($tong); echo "đ";?></span></p> 
                                     </div>
-                                    <div class="modal-footer">
-                                        <!-- <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button> -->
-                                        <!-- <button type="button" class="btn btn-primary">Understood</button> -->
-                                    </div>
+                                    
                                     </div>
                                 </div>
                             </div>
