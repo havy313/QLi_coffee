@@ -47,6 +47,7 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Tên sản phẩm</th>
+                                        <th>Danh mục</th>
                                         <th>Giá thành</th>
                                         <th>Số lượng sản phẩm</th>
                                         <th>Hình ảnh</th>
@@ -64,8 +65,10 @@
                                                             WHERE dt.ten_sp = '{$search}' GROUP BY dt.id_sp";
                                             } 
                                         } else {
-                                                $query = "SELECT *, SUM(so_luong) tong_sp FROM doanhthu dt inner join sanpham sp on dt.id_sp = sp.id_sp
-                                                GROUP BY dt.id_sp ORDER BY `tong_sp` DESC LIMIT {$offset}, {$row_count}";
+                                                $query = "SELECT *, SUM(so_luong) tong_sp FROM ((doanhthu dt 
+                                                                    inner join sanpham sp on dt.id_sp = sp.id_sp)
+                                                                    inner join loai  on  sp.id_loai= loai.id_loai)
+                                                                    GROUP BY dt.id_sp ORDER BY `tong_sp` DESC LIMIT {$offset}, {$row_count}";
                                             }
                                                 $result = $mysqli->query($query);
                                                 while ($arItem = mysqli_fetch_assoc($result)) {
@@ -75,7 +78,7 @@
                                     <!-- <form method ="post" action=""> -->
                                         <td style="text-align: center;"><?php echo $id_sp;?></td>
                                             <td><?php echo $arItem['ten_sp'];?></td>
-                                            <!-- <td><?php echo $arItem['gia_sp'];?></td> -->
+                                            <td><?php echo $arItem['ten_loai']?></td>
                                             <td style="text-align: center;">
                                                 <?php 
                                                     echo number_format($arItem['gia_sp']);
