@@ -52,12 +52,12 @@
                                     <tr>
                                         <th >ID</th>
                                         <th>Tên</th>
-                                        <th>Danh mục</th>
+                                        <th width="100px">Danh mục</th>
                                         <th>Size</th>
                                         <th>Giá </th>
                                         <th>Mô tả</th>
                                         <th>Hình ảnh</th>
-                                        <th width="160px">Chức năng</th>
+                                        <th width="100px">Chức năng</th>
                                     </tr>
                                 </thead>
                                 <tbody>

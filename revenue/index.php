@@ -154,7 +154,7 @@
                                                 <th>SL</th>
                                                 <th>Đơn giá</th>
                                                 <th>Giá tổng</th>
-                                                <th>Ngày - Giờ</th>
+                                                <th>Ngày - Giờ</th> 
                                                 <th>Ca</th>
                                                 <th>Nhân viên</th>                                               
                                             </tr>
@@ -191,7 +191,7 @@
                                         ?>
                                     </table>
                                    
-                                    <p>Tổng: <span><?php echo number_format($tong); echo "đ";?></span></p> 
+                                    <p class="text_tong"><b>Tổng: </b><span><?php echo number_format($tong); echo "đ";?></span></p> 
                                     </div>
                                     <div class="modal-footer">
                                         <!-- <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button> -->

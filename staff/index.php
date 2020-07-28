@@ -58,7 +58,7 @@
                                         <th>ID</th>                                   
                                         <th>Tên nhân viên</th>
                                         <th>Ca</th>
-                                        <th>Time</th>
+                                        <th>Ngày</th>
                                         <th>Phone</th>
                                         <th width="160px" >Chức năng</th>
                                     </tr>

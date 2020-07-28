@@ -12,68 +12,82 @@
         <div class="row">
             <div class="col-md-4 col-sm-4 col-xs-4">
                 <div class="panel panel-back noti-box">
-                    <span class="icon-box bg-color-green set-icon">
-                    <i class="fa fa-bell-o"></i>
-                </span>
-                    <div class="text-box">
-                        <p class="main-text"><a href="cat/" title="">Quản Lý Danh mục</a></p>
-                        <p class="text-muted">Có 9 danh mục</p>
-                    </div>
+                    <a href="cat/">
+                        <span class="icon-box bg-color-green set-icon">
+                            <i class="fa fa-bell-o"></i>
+                        </span>
+                        <div class="text-box">
+                            <p class="main-text">Quản Lý Danh mục</p>
+                            <p class="text-muted">Có 9 danh mục</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+           
+                <div class="col-md-4 col-sm-4 col-xs-4">                   
+                    <div class="panel panel-back noti-box">
+                        <a href="menu/">
+                            <span class="icon-box bg-color-blue set-icon">
+                                <i class="fa fa-book"></i>
+                            </span>
+                            <div class="text-box">
+                                <p class="main-text">Quản Lý Thực Đơn</p>
+                                <p class="text-muted">Danh sách các món</p>
+                            </div>
+                        </a>
+                    </div>                 
+                </div>
+           
+            <div class="col-md-4 col-sm-4 col-xs-4">
+                <div class="panel panel-back noti-box">
+                    <a href="user/">
+                        <span class="icon-box bg-color-brown set-icon">
+                            <i class="fa fa-user"></i>
+                        </span>
+                        <div class="text-box">
+                            <p class="main-text">Quản lý Người Dùng</p>
+                            <p class="text-muted">Có 6 người dùng</p>
+                        </div>
+                    </a>
+                </div>
+            </div>          
+            <div class="col-md-4 col-sm-4 col-xs-4">
+                <div class="panel panel-back noti-box">
+                    <a href="revenue/">
+                        <span class="icon-box bg-color-red set-icon">
+                            <i class="fa fa-bar-chart-o"></i>
+                        </span>
+                        <div class="text-box">
+                            <p class="main-text">Quản Lý Doanh Thu</p>
+                            <p class="text-muted">Doanh thu 1 ngày</p>
+                        </div>
+                    </a>
                 </div>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-4">
                 <div class="panel panel-back noti-box">
-                    <span class="icon-box bg-color-blue set-icon">
-                    <i class="fa fa-book"></i>
-                </span>
-                    <div class="text-box">
-                        <p class="main-text"><a href="menu/" title="">Quản Lý Thực Đơn</a></p>
-                        <p class="text-muted">Danh sách các món</p>
-                    </div>
-                </div>
+                    <a href="staff/">
+                        <span class="icon-box bg-color-violet set-icon">
+                            <i class="fa fa-users"></i>
+                        </span>
+                        <div class="text-box">
+                            <p class="main-text">Quản Lý Nhân Viên</p>
+                            <p class="text-muted">Có 6 nhân viên</p>
+                        </div>
+                    </a>
+                </div>    
             </div>
             <div class="col-md-4 col-sm-4 col-xs-4">
                 <div class="panel panel-back noti-box">
-                    <span class="icon-box bg-color-brown set-icon">
-                    <i class="fa fa-user"></i>
-                </span>
-                    <div class="text-box">
-                        <p class="main-text"><a href="user/" title="">Quản lý Người Dùng</a></p>
-                        <p class="text-muted">Có 6 người dùng</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-4">
-                <div class="panel panel-back noti-box">
-                <span class="icon-box bg-color-violet set-icon">
-                <i class="fa fa-users"></i>
-                </span>
-                    <div class="text-box">
-                        <p class="main-text"><a href="Staff/" title="">Quản Lý Nhân Viên</a></p>
-                        <p class="text-muted">Có 6 nhân viên</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-4">
-                <div class="panel panel-back noti-box">
-                <span class="icon-box bg-color-red set-icon">
-                <i class="fa fa-bar-chart-o"></i>
-                </span>
-                    <div class="text-box">
-                        <p class="main-text"><a href="revenue/" title="">Quản Lý Doanh Thu</a></p>
-                        <p class="text-muted">Doanh thu 1 ngày</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-4">
-                <div class="panel panel-back noti-box">
-                <span class="icon-box bg-color-pink set-icon">
-                <i class="fa fa-phone-square"></i>
-                </span>
-                    <div class="text-box">
-                        <p class="main-text"><a href="contact/" title="">Quản Lý Liên Hệ</a></p>
-                        <p class="text-muted" id="demo">Chủ cửa hàng</p>
-                    </div>
+                    <a href="contact/">
+                        <span class="icon-box bg-color-pink set-icon">
+                            <i class="fa fa-phone-square"></i>
+                        </span>
+                        <div class="text-box">
+                            <p class="main-text">Quản Lý Liên Hệ</p>
+                            <p class="text-muted" id="demo">Chủ cửa hàng</p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
