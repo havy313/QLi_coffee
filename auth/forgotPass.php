@@ -13,7 +13,7 @@
    <head>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Starbucks Coffee | Đăng nhập</title>
+      <title>Starbucks Coffee | Quên Mật Khẩu</title>
 	<!--Bootsrap 4 CDN-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     
@@ -28,7 +28,8 @@
 	<div class="d-flex justify-content-center h-100">
 		<div class="card">
 			<div class="card-header">
-				<h3>Sign In</h3>
+				<h3>Forgot Password ?</h3>
+				<p style='color: white'>Enter your username below to reset your password.</p>
 				<div class="d-flex justify-content-end social_icon">
 					<span><i class="fab fa-facebook-square"></i></span>
 					<span><i class="fab fa-google-plus-square"></i></span>
@@ -36,54 +37,38 @@
 				</div>
 			</div>
 			<div class="card-body">
-			<form action="" method="POST">
-			<?php 
-				if(isset($_POST['login'])){
-							$username = $_POST['username'];
-							$password =md5($_POST['password']);
-					$query = "SELECT * FROM users WHERE username = '{$username}' && password = '{$password}'";
+			  <?php 
+				  $messageUser = "";
+				//   $username="";
+				  if(isset($_GET['send'])){
+					$username = $_GET['username'];
+					$query = "SELECT * FROM users WHERE username = '{$username}'";
 					$result = $mysqli->query($query);
 					$user = mysqli_fetch_assoc($result);
 					if($user == null){     
-						echo "<span style='color: white'>Sai username hoặc pasword</span><br /><br/>";   
+						$messageUser= "Username is incorrect.";   
 					} else {
-						//đăng nhập dúng
-						//B1: tạo session
-						$_SESSION['user'] = $user;
-						//b2: Cho chuyển hướng sang admin
-						header("location:/");
+						$messageUser = "";
+						HEADER("LOCATION:changePass.php?username=$username");
 						die();
-						}
 					}
-          			?>
-				
+				}
+          ?>
+				<form action="" method="GET">
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" class="form-control" placeholder="username" name="username" required="required">
-						
+						<input type="text" class="form-control" placeholder="username" name="username"  required="required">
 					</div>
-					<div class="input-group form-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-key"></i></span>
-						</div>
-						<input type="password" name="password" class="form-control" placeholder="password" required="required">
-					</div>
-					<div class="row align-items-center remember">
-						<input type="checkbox">Remember Me
-					</div>
+					<?php if($messageUser) echo "<p style='color: red'>$messageUser</p>"?>
 					<div class="form-group">
-						<input type="submit" name="login" value="Login" class="btn float-right login_btn">
-					</div>
-				</form>
+						<input type="submit" name="send" value="Send" class="btn btn-success btn-lg btn-block">
+					</form>
 			</div>
 			<div class="card-footer">
 				<div class="d-flex justify-content-center links">
-					Don't have an account?<a href="signup.php">Sign Up</a>
-				</div>
-				<div class="d-flex justify-content-center">
-					<a href="forgotPass.php">Forgot your password?</a>
+					Already have an account?<a href="login.php">Sign In</a>
 				</div>
 			</div>
 		</div>
