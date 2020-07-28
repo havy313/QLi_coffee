@@ -2,7 +2,7 @@
  	$localhost = 'localhost';
  	$username = 'root';
  	$password = '12345';
- 	$database = 'starbucks';
+ 	$database = 'lalalalala';
 
  	$mysqli = new mysqli($localhost, $username, $password, $database);
  	$mysqli->set_charset('utf8');

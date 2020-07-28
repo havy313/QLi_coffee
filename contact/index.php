@@ -42,9 +42,9 @@
                                    
                                 </div>
                                 <div class="col-sm-6" style="text-align: right;">
-                                    <form method="post" action="">
+                                    <form method="get" action="">
                                         <input type="submit" name="search" value="Tìm kiếm" class="btn btn-warning btn-sm" style="float:right" />
-                                        <input type="search" class="form-control input-sm" placeholder="Tìm kiếm" style="float:right; width: 300px;" />
+                                        <input type="search" name="search" class="form-control input-sm" placeholder="Tìm kiếm" style="float:right; width: 300px;" />
                                         <div style="clear:both"></div>
                                     </form><br />
                                 </div>
@@ -63,8 +63,18 @@
                                 </thead>
                                 <tbody>
                                     <!-- lấy ra tất cả danh mục tin -->
+
                                     <?php 
+                                        $query ='';
+                                        if(isset($_GET['search'])){
+                                            $search = trim($_GET['search']);
+                                            if(($search)){
+                                                $query = "SELECT * FROM contact
+                                                              WHERE name = '{$search}'";
+                                            } 
+                                        } else {
                                         $query = "SELECT * FROM contact ORDER BY contact_id ASC LIMIT {$offset}, {$row_count}";
+                                        }
                                         $result = $mysqli->query($query);
                                         while ($arItem = mysqli_fetch_assoc($result)) {
                                            $contact_id = $arItem['contact_id'];
@@ -90,6 +100,17 @@
                                    ?>
                                 </tbody>
                             </table>
+                            <?php 
+                                if(isset($_GET['search'])){
+                            ?>
+                            <div class="row">
+                                <div class="col-sm-12" style="text-align: right;">
+                                    <a href="index.php" title="" class="btn btn-primary"><i class="fa fa-reply"></i> Trở về</a>    
+                                </div>
+                            </div>
+                            <?php 
+                                }
+                            ?>
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="dataTables_info" id="dataTables-example_info" style="margin-top:27px">Trang <?php echo $current_page; ?> của <?php echo $TongSoTrang; ?> trang liên hệ</div>
