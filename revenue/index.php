@@ -49,8 +49,8 @@
                                         <th>Tên sản phẩm</th>
                                         <th>Danh mục</th>
                                         <th>Số lượng SP</th>
-                                        <th>Giá thành</th>
-                                        <th>Giá đơn hàng</th>
+                                        <th>Đơn giá</th>
+                                        <th>Giá tổng</th>
                                         <th>Hình ảnh</th>
                                         <th>Chi tiết</th>
                                     </tr>
@@ -59,7 +59,6 @@
                                     <?php
                                         $query ='';
                                         $tong = 0;
-                                        $tongDH = 0;
                                         if(isset($_GET['search'])){
                                             $search = trim($_GET['search']);
                                             if(($search)){
@@ -85,9 +84,8 @@
                                                 $result = $mysqli->query($query);
                                                 while ($arItem = mysqli_fetch_assoc($result)) {
                                                     $id_sp =  $arItem['id_sp'];
-                                                    $gia_tong = $arItem['gia_sp'] * $arItem['so_luong'];
-                                                    $tongDH += $gia_tong;
-                                                    $tong += $tongDH;    
+                                                    $gia_tong = $arItem['gia_sp'] * $arItem['tong_sp'];
+                                                    $tong += $gia_tong;    
                                     ?>
                                     <tr class="gradeX">
                                         <td style="text-align: center;"><?php echo $id_sp;?></td>
@@ -100,7 +98,7 @@
                                                     echo "đ";
                                                 ?>
                                             </td>
-                                            <td style="text-align: center;"><?php echo number_format($tongDH); echo "đ";?></td>
+                                            <td style="text-align: center;"><?php echo number_format($gia_tong); echo "đ";?></td>
                                             <td style="text-align: center;">
                                                 <?php
                                                 if ($arItem['hinhanh'] != '' ) {
