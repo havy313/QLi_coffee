@@ -17,38 +17,54 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <?php
-                                //kiểm tra người dùng bấm submit
+                                    $messagePass ="";
+                                    $messageUser = "";
                                     if (isset($_POST['submit'])) {
                                        $username = $_POST['username'];
-
-                                       //mã hóa một chiều md5(chuyển cho một chuổi bất kì và sẽ có 50 đến 70 kí tự )
-                                       $password = md5 ($_POST['password']);
-
-                                       $fullname = $_POST['fullname'];
-                                       $query = "INSERT INTO users(username, password, fullname) VALUES ('{$username}', '{$password}', '{$fullname}')";
-                                       $result = $mysqli->query($query);
-                                       if ($result) {
-                                          HEADER("LOCATION:index.php?msg=Thêm thành công");
-                                          die();
-                                       }else{
-                                             echo "Có lỗi khi thêm người dùng";
-                                             die();
-                                       }
+                                        $password = md5 ($_POST['password']);
+                                        $cnfPassword = md5($_POST['cnfPassword']);
+                                        $fullname = $_POST['fullname'];
+                                        
+                                        if($cnfPassword != $password){
+                                            $messagePass = "Incorrect Password";
+                                        } else {
+                                            $query = "SELECT * FROM users WHERE username = '{$username}'";
+                                            $result = $mysqli->query($query);
+                                            if(mysqli_fetch_assoc($result) == 0){
+                                                $query = "INSERT INTO users(username, password, fullname) VALUES ('{$username}', '{$password}', '{$fullname}')";
+                                                $result = $mysqli->query($query);
+                                                if ($result) {
+                                                    HEADER("LOCATION:index.php?msg=Thêm thành công");
+                                                    die();
+                                                }else{
+                                                    echo "Có lỗi khi thêm người dùng";
+                                                    die();
+                                                }
+                                            } else {
+                                                $messageUser = "Username have existed on website";
+                                            } 
+                                        }
                                     }
                                 ?>
                                 <form  action = "" method= "post" role="form">
+                                <div class="form-group">
+                                        <label>Fullname: </label>
+                                        <input type="text" name="fullname" class="form-control" required="required"/>
+                                    </div>
                                     <div class="form-group">
                                         <label>Username: </label>
-                                        <input type="text" name="username" class="form-control" />
+                                        <input type="text" name="username" class="form-control" required="required"/>
                                     </div>
+                                    <?php if($messageUser) echo "<p style='color: red'>$messageUser</p>"?>
                                     <div class="form-group">
                                         <label>Password: </label>
-                                        <input type="password" name="password" class="form-control" />
+                                        <input type="password" name="password" class="form-control" required="required"/>
                                     </div>
                                     <div class="form-group">
-                                        <label>Fullname: </label>
-                                        <input type="text" name="fullname" class="form-control" />
+                                        <label>Confirm Password: </label>
+                                        <input type="password" name="cnfPassword" class="form-control" required="required"/>
                                     </div>
+                                    <?php if($messagePass) echo "<p style='color: red'>$messagePass</p>"?>
                                     <button type="submit" name="submit" class="btn btn-success btn-md">Thêm</button>
                                     <a class="btn btn-danger" href="index.php" role="button">Trở về</a>
                                 </form>

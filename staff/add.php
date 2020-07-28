@@ -36,12 +36,12 @@
                                 <form role="form" action= "" method = "POST" enctype = "multipart/form-data">
                                     <div class="form-group">
                                         <label>Tên nhân viên</label>
-                                        <input type="text" name="ten_nhanvien" class="form-control" />
+                                        <input type="text" name="ten_nhanvien" class="form-control" required="required"/>
                                     </div>
 
                                     <div class="form-group">
                                         <label>Ca làm</label>
-                                        <select class="form-control" name="id_ca"> 
+                                        <select class="form-control" name="id_ca" required="required"> 
                                                 <option value = "">---Chọn ca---</option>
                                                 <?php
                                                     $sql = "SELECT * FROM ca";
@@ -56,11 +56,11 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Ngày làm</label>
-                                        <input type="date" name="ngay"></input>                                    
+                                        <input type="date" name="ngay" required="required"></input>                                    
                                     </div>
                                     <div class="form-group">
                                         <label>Phone</label>
-                                        <input type="text" name="phone" class="form-control" />
+                                        <input type="text" name="phone" class="form-control" required="required"/>
                                     </div>
                                     <button type="submit" name="submit" class="btn btn-success btn-md">Thêm</button>
                                     <a class="btn btn-danger" href="index.php" role="button">Trở về</a>
