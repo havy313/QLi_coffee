@@ -6,11 +6,10 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/inc/leftbar.php';
     <div id="page-inner">
         <div class="row">
             <div class="col-md-12">
-                <h2>Sửa thông tin nhân viên</h2>
+                <h2 class="section_heading">SỬA THÔNG TIN NHÂN VIÊN</h2>
             </div>
         </div>
         <!-- /. ROW  -->
-        <hr />
         <div class="row">
             <div class="col-md-12">
                 <!-- Form Elements -->

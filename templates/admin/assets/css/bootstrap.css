@@ -1457,7 +1457,7 @@ th {
 .table-bordered > thead > tr > td,
 .table-bordered > tbody > tr > td,
 .table-bordered > tfoot > tr > td {
-  border: 1px solid #ddd;
+  border: 1px solid #fff;
 }
 .table-bordered > thead > tr > th,
 .table-bordered > thead > tr > td {
@@ -5059,20 +5059,21 @@ a.list-group-item-danger.active:focus {
 }
 .close {
   float: right;
-  font-size: 21px;
+  font-size: 42px;
   font-weight: bold;
   line-height: 1;
-  color: #000;
+  color: red;
   text-shadow: 0 1px 0 #fff;
-  filter: alpha(opacity=20);
+  filter: alpha(opacity=10);
   opacity: .2;
+  margin-right: 10px;
 }
 .close:hover,
 .close:focus {
-  color: #000;
+  color: rgb(240, 6, 6);
   text-decoration: none;
   cursor: pointer;
-  filter: alpha(opacity=50);
+  filter: alpha(opacity=20);
   opacity: .5;
 }
 button.close {
