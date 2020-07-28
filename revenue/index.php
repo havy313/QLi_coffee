@@ -48,8 +48,9 @@
                                         <th>ID</th>
                                         <th>Tên sản phẩm</th>
                                         <th>Danh mục</th>
+                                        <th>Số lượng SP</th>
                                         <th>Giá thành</th>
-                                        <th>Số lượng sản phẩm</th>
+                                        <th>Giá đơn hàng</th>
                                         <th>Hình ảnh</th>
                                         <th>Chi tiết</th>
                                     </tr>
@@ -57,6 +58,8 @@
                                 <tbody>
                                     <?php
                                         $query ='';
+                                        $tong = 0;
+                                        $tongDH = 0;
                                         if(isset($_GET['search'])){
                                             $search = trim($_GET['search']);
                                             if(($search)){
@@ -82,18 +85,22 @@
                                                 $result = $mysqli->query($query);
                                                 while ($arItem = mysqli_fetch_assoc($result)) {
                                                     $id_sp =  $arItem['id_sp'];
+                                                    $gia_tong = $arItem['gia_sp'] * $arItem['so_luong'];
+                                                    $tongDH += $gia_tong;
+                                                    $tong += $tongDH;    
                                     ?>
                                     <tr class="gradeX">
                                         <td style="text-align: center;"><?php echo $id_sp;?></td>
                                             <td><?php echo $arItem['ten_sp'];?></td>
                                             <td><?php echo $arItem['ten_loai']?></td>
+                                            <td style="text-align: center;"><?php echo $arItem['tong_sp'];?></td>
                                             <td style="text-align: center;">
                                                 <?php 
                                                     echo number_format($arItem['gia_sp']);
                                                     echo "đ";
                                                 ?>
                                             </td>
-                                            <td style="text-align: center;"><?php echo $arItem['tong_sp'];?></td>
+                                            <td style="text-align: center;"><?php echo number_format($tongDH); echo "đ";?></td>
                                             <td style="text-align: center;">
                                                 <?php
                                                 if ($arItem['hinhanh'] != '' ) {
@@ -115,6 +122,16 @@
                                     <?php 
                                             }
                                     ?>
+                                    <tr class="gradeX">
+                                            <td class="text_bold">Tổng: </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="text_bold"><?php echo number_format($tong); echo "đ"?></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
                                 </tbody>
                             </table>
                             <?php 
@@ -173,7 +190,7 @@
                                                                                         INNER JOIN ca ON dt.id_ca = ca.id_ca)
                                                                             WHERE dt.id_sp = $id_sp";
                                                 $resultDB = $mysqli->query($queryDB);
-                                                $tong = 0;       
+                                                $tongDH = 0;       
                                                 while ($arItem = mysqli_fetch_assoc($resultDB)){
                                                     $so_luong = $arItem['so_luong'];
                                                     $gia_sp   = $arItem['gia_sp'];
@@ -181,7 +198,7 @@
                                                     $ngay_mua = $arItem['ngay_mua'];
                                                     $ca = $arItem['ten_ca'];
                                                     $nhan_vien = $arItem['ten_nhanvien'];
-                                                    $tong += $gia_tong;
+                                                    $tongDH += $gia_tong;
                                             ?>   
                                             
                                                 <tr class="gradeX">
@@ -198,7 +215,7 @@
                                          </tbody>
                                     </table>
                                    
-                                    <p class="text_tong"><b>Tổng: </b><span><?php echo number_format($tong); echo "đ";?></span></p> 
+                                    <p class="text_stong"><b>Tổng: </b><span><?php echo number_format($tongDH); echo "đ";?></span></p> 
                                     </div>
                                     
                                     </div>

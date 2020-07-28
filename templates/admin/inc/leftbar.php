@@ -17,10 +17,10 @@
                 <a href="/user/" class="hi"><i class="fa fa-user fa-2x"></i><span style="padding-left: 10px;"> Quản Lý Người Dùng</span></a>
             </li>
             <li  id="item__doanhthu">
-                <a href="/revenue/" class="hi"><i class="fa fa-bar-chart-o fa-2x"></i> <span style=""> Quản Lý Doanh Thu</span></a>
+                <a href="/revenue/" class="hi"><i class="fa fa-bar-chart-o fa-2x"></i> <span> Quản Lý Doanh Thu</span></a>
             </li>
             <li  id="item__nhanvien">
-                <a href="/staff/" class="hi"><i class="fa fa-users fa-2x"></i><span style=""> Quản Lý Nhân Viên</span></a>
+                <a href="/staff/" class="hi"><i class="fa fa-users fa-2x"></i><span> Quản Lý Nhân Viên</span></a>
             </li>
             <li  id="item__lienhe">
                 <a href="/contact/" class="hi"><i class="fa fa-phone-square fa-2x"></i> <span style="padding-left: 9px;">Quản Lý Liên Hệ</span></a>
