@@ -51,7 +51,7 @@
 								$password = md5 ($_POST['password']);
 								$query = "SELECT * FROM users WHERE username = '{$username}'";
 								$result = $mysqli->query($query);
-								if($result != NULL){
+								if(mysqli_fetch_assoc($result) == 0){
 									$createUser = "INSERT INTO users(username, password, fullname) VALUES ('{$username}', '{$password}', '{$fullname}')";
 									$resultUser = $mysqli->query($createUser);
 									$queryUser = "SELECT * FROM users WHERE username = '{$username}'";
