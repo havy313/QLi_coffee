@@ -17,7 +17,7 @@
                             <i class="fa fa-bell-o"></i>
                         </span>
                         <div class="text-box">
-                            <p class="main-text">Quản Lý Danh mục</p>
+                            <p class="main-text">Quản Lý Danh Mục</p>
                             <p class="text-muted">Có 9 danh mục</p>
                         </div>
                     </a>

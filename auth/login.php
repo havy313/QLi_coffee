@@ -38,19 +38,24 @@
 			<div class="card-body">
 			<form action="" method="POST">
 			<?php 
-				if(isset($_POST['login'])){
+				if(isset($_POST['login'])  && $_POST["username"]!=''&& $_POST["password"]!=''){
 							$username = $_POST['username'];
-							$password =md5($_POST['password']);
-					$query = "SELECT * FROM users WHERE username = '{$username}' && password = '{$password}'";
+							$password =$_POST['password'];
+							$passwordEncrypt = md5($password);
+					$query = "SELECT * FROM users WHERE username = '{$username}' && password = '{$passwordEncrypt}'";
 					$result = $mysqli->query($query);
 					$user = mysqli_fetch_assoc($result);
 					if($user == null){     
 						echo "<span style='color: white'>Sai username hoặc pasword</span><br /><br/>";   
 					} else {
-						//đăng nhập dúng
-						//B1: tạo session
+						if(!empty($_POST['remember_me'])){
+							setcookie ("username", $username, time()+ (10 * 365 * 24 * 60 * 60));  
+							setcookie ("password",	$password,	time()+ (10 * 365 * 24 * 60 * 60));
+						} else {
+							setcookie ("username",""); 
+							setcookie ("password","");
+						}
 						$_SESSION['user'] = $user;
-						//b2: Cho chuyển hướng sang admin
 						header("location:/");
 						die();
 						}
@@ -61,17 +66,17 @@
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" class="form-control" placeholder="username" name="username" required="required">
+						<input type="text" class="form-control" placeholder="username" name="username" value="<?php if(isset($_COOKIE["username"])) { echo $_COOKIE["username"]; } ?>" required="required">
 						
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input type="password" name="password" class="form-control" placeholder="password" required="required">
+						<input type="password" name="password" class="form-control" value="<?php if(isset($_COOKIE["password"])) { echo $_COOKIE["password"]; } ?>" placeholder="password" required="required">
 					</div>
 					<div class="row align-items-center remember">
-						<input type="checkbox">Remember Me
+						<input type="checkbox" name="remember_me">Remember Me
 					</div>
 					<div class="form-group">
 						<input type="submit" name="login" value="Login" class="btn float-right login_btn">
