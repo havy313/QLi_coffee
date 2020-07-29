@@ -59,6 +59,7 @@
                                     <?php
                                         $query ='';
                                         $tong = 0;
+                                        $tong_SL = 0;
                                         if(isset($_GET['search'])){
                                             $search = trim($_GET['search']);
                                             if(($search)){
@@ -84,37 +85,41 @@
                                                 $result = $mysqli->query($query);
                                                 while ($arItem = mysqli_fetch_assoc($result)) {
                                                     $id_sp =  $arItem['id_sp'];
-                                                    $gia_tong = $arItem['gia_sp'] * $arItem['tong_sp'];
+                                                    $ten_sp = $arItem['ten_sp'];
+                                                    $ten_loai = $arItem['ten_loai'];
+                                                    $tong_sp = $arItem['tong_sp'];
+                                                    $gia_sp = $arItem['gia_sp'];
+                                                    $gia_tong = $gia_sp * $tong_sp;
+                                                    $hinh_anh = $arItem['hinhanh'];
+                                                    $tong_SL +=  $tong_sp;
                                                     $tong += $gia_tong;    
                                     ?>
                                     <tr class="gradeX">
                                         <td style="text-align: center;"><?php echo $id_sp;?></td>
-                                            <td><?php echo $arItem['ten_sp'];?></td>
-                                            <td><?php echo $arItem['ten_loai']?></td>
-                                            <td style="text-align: center;"><?php echo $arItem['tong_sp'];?></td>
+                                            <td><?php echo $ten_sp;?></td>
+                                            <td><?php echo $ten_loai;?></td>
+                                            <td style="text-align: center;"><?php echo $tong_sp;?></td>
                                             <td style="text-align: center;">
                                                 <?php 
-                                                    echo number_format($arItem['gia_sp']);
+                                                    echo number_format($gia_sp);
                                                     echo "đ";
                                                 ?>
                                             </td>
                                             <td style="text-align: center;"><?php echo number_format($gia_tong); echo "đ";?></td>
                                             <td style="text-align: center;">
                                                 <?php
-                                                if ($arItem['hinhanh'] != '' ) {
+                                                if ( $hinh_anh != '' ) {
                                                         
                                                 ?>
-                                                <img src="/files/<?php echo $arItem['hinhanh'];?>" alt="" height="100px" width="100px"/>
+                                                <img src="/files/<?php echo $hinh_anh;?>" alt="" height="100px" width="100px"/>
                                                 <?php 
                                                     }
                                                 ?>
                                             </td>
                                             <td style="text-align: center;">
-                                                <!-- <input type="submit" > -->
                                                     <a type="submit" class="btn" data-toggle="modal" data-target="#<?php echo $id_sp;?>">
-                                                        <img src="/templates/admin/assets/img/icondetail.png" class=""></i>
+                                                        <img src="/templates/admin/assets/img/icondetail.png"></i>
                                                     </a>
-                                                <!-- </input> -->
                                             </td>
                                         </tr>
                                     <?php 
@@ -124,7 +129,7 @@
                                             <td class="text_bold">Tổng: </td>
                                             <td></td>
                                             <td></td>
-                                            <td></td>
+                                            <td class="text_bold"><?php echo $tong_SL?></td>
                                             <td></td>
                                             <td class="text_bold"><?php echo number_format($tong); echo "đ"?></td>
                                             <td></td>
@@ -225,34 +230,12 @@
                             ?>
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <div class="dataTables_info" id="dataTables-example_info" style="margin-top:27px">Trang <?php echo $current_page; ?> của <?php echo $TongSoTrang; ?> trang doanh thu</div>
+                                    <div class="dataTables_info" id="dataTables-example_info" style="margin-top:27px">Trang 1 của 1 trang doanh thu</div>
                                 </div>
                                 <div class="col-sm-6" style="text-align: right;">
                                     <div class="dataTables_paginate paging_simple_numbers" id="dataTables-example_paginate">
                                         <ul class="pagination">
-                                        <?php 
-                                            if($current_page >1 && $TongSoTrang >1){
-                                        ?>
-                                                 <li class="paginate_button previous " aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous"><a href="index.php?page=<?php echo ($current_page -1)?>">Trang trước</a></li>
-                                        <?php       
-                                            }
-                                            for($i=1; $i<=$TongSoTrang; $i++){  
-                                                if( $i == $current_page){
-                                        ?>
-                                                     <li class="paginate_button active" aria-controls="dataTables-example" tabindex="0"><a href="#"><?php echo $current_page;?></a></li>
-                                        <?php 
-                                            }else{
-                                        ?>
-                                            <li class="paginate_button " aria-controls="dataTables-example" tabindex="0"><a href="index.php?page=<?php echo $i;?>"><?php echo $i;?></a></li>
-                                        <?php
-                                                }
-                                            }
-                                                if($current_page < $TongSoTrang && $TongSoTrang >1){
-                                        ?>
-                                               <li class="paginate_button next" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_next"><a href="index.php?page=<?php echo ($current_page +1)?>">Trang tiếp</a></li>
-                                        <?php       
-                                            }
-                                        ?>
+                                            <li class="paginate_button active" aria-controls="dataTables-example" tabindex="0"><a href="#">1</a></li>
                                         </ul>
                                     </div>
                                 </div>
