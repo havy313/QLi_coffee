@@ -47,6 +47,9 @@
                                     }
                                 ?>
                                 <form role="form" action= "" method = "POST" enctype = "multipart/form-data">
+                                <div  class="col-6 col-sm-4" id=col-6>
+
+                                
                                     <div class="form-group">
                                         <label>Tên sản phẩm</label>
                                         <input type="text" name="ten_sp" class="form-control" required="required"/>
@@ -68,6 +71,20 @@
                                             </select>
                                     </div>
                                     <div class="form-group">
+                                        <label>Mô tả</label>
+                                        <textarea class="form-control" rows="3" name="mota" required="required" ></textarea>
+                                    </div>
+                                   
+                                    
+                                    <button type="submit" name="submit" class="btn btn-success btn-md">Thêm</button>
+                                    <a class="btn btn-danger" href="index.php" role="button">Trở về</a>
+                                    </div>
+                                    <div  class="col-6 col-sm-4" id=col-6>
+                                    <div class="form-group">
+                                        <label>Giá sản phẩm</label>
+                                        <input type="text" name="gia_sp" class="form-control" required="required"/>
+                                    </div>
+                                    <div class="form-group">
                                         <label>Size sản phẩm</label>
                                         <select class="form-control" name="id_size" required="required"> 
                                                 <option value = "">---Chọn size---</option>
@@ -82,20 +99,13 @@
                                                 ?>                                                
                                             </select>
                                     </div>
-                                    <div class="form-group">
-                                        <label>Giá sản phẩm</label>
-                                        <input type="text" name="gia_sp" class="form-control" required="required"/>
-                                    </div>
+                                   
                                     <div class="form-group">
                                         <label>Hình ảnh</label>
                                         <input type="file" name="hinhanh" required="required"/>
                                     </div>
-                                    <div class="form-group">
-                                        <label>Mô tả</label>
-                                        <textarea class="form-control" rows="3" name="mota" required="required"></textarea>
                                     </div>
-                                    <button type="submit" name="submit" class="btn btn-success btn-md">Thêm</button>
-                                    <a class="btn btn-danger" href="index.php" role="button">Trở về</a>
+                                   
                                 </form>
                             </div>
                         </div>
