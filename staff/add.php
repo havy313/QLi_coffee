@@ -67,14 +67,34 @@
                                             <label>Ngày sinh</label>
                                             <input type="date" name="ngay_sinh" class="form-control"
                                             value="<?php if(isset($_COOKIE["ngay_sinh"])) { echo $_COOKIE["ngay_sinh"]; } ?>" required="required"/>
-                                        </div>                                                
+                                        </div> 
+                                        <?php
+                                            if($isRegister == false){
+                                        ?>                                              
                                         <button type="submit" name="add" class="btn btn-success btn-md">Thêm ca làm</button>
+                                        <?php
+                                            }
+                                        ?>
                                     </div>
                                     <div class="col-6 col-sm-4" id=col-6>
                                         <div class="form-group" >
                                             <label>Giới tính</label>
-                                            <input type="text" name="gioi_tinh" class="form-control"
-                                            value="<?php if(isset($_COOKIE["gioi_tinh"])) { echo $_COOKIE["gioi_tinh"]; } ?>" required="required"/>
+                                            <select class="form-control" name="gioi_tinh">
+                                                <option value="" selected>Chọn giới tính</option>
+                                                <option value="Nam">Nam</option>
+                                                <option value="Nữ">Nữ</option>
+                                                <?php
+                                                    if(isset($_COOKIE['gioi_tinh'])){
+                                                ?>
+                                                <option value="<?php echo $_COOKIE['gioi_tinh'];?>" selected>
+                                                    <?php echo $_COOKIE['gioi_tinh'];?>
+                                                </option> 
+                                                <?php
+                                                    }
+                                                ?>
+                                            </select>
+                                            <!-- <input type="text" name="gioi_tinh" class="form-control" -->
+                                            <!-- value="<?php if(isset($_COOKIE["gioi_tinh"])) { echo $_COOKIE["gioi_tinh"]; } ?>" required="required"/> -->
                                         </div>
                                         <div class="form-group" >
                                             <label>Phone</label>
@@ -158,10 +178,21 @@
                                                 setcookie ("gioi_tinh","");  
                                                 setcookie ("phone", "");
                                                 header("Location: index.php");
+                                            } else if(isset($_POST['back'])){
+                                                $deleteNV = "DELETE FROM nhanvien WHERE id_nhanvien = '{$id_nhanvien}'";
+                                                $resultNV = $mysqli->query($deleteNV);
+                                                $queryTime = "SELECT * FROM giolam WHERE id_nhanvien = '{$id_nhanvien}'";
+                                                $resultTime = $mysqli->query($queryTime);
+                                                while($arTime = mysqli_fetch_assoc($resultTime)){
+                                                    $id_GL = $arTime['id'];
+                                                    $deleteGL = "DELETE FROM giolam WHERE id = {$id_GL}";
+                                                    $resultGL = $mysqli->query($deleteGL);
+                                                }
+                                                header("Location: index.php");
                                             }
                                         ?>
                                         <button type="submit" name="done" class="btn btn-success btn-md">Thêm</button>
-                                        <a class="btn btn-danger" href="index.php" role="button">Trở về</a>
+                                        <button type="submit" name="back" class="btn btn-danger">Trở về</button>
                                     </form>
                                     <?php
                                         }
