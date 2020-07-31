@@ -104,9 +104,16 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/inc/leftbar.php';
                                                 <?php
                                             }
                                             ?>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td style="text-align: center;">
+                                                <a type="add" data-toggle="modal"data-target="#nv<?php echo $id_nhanvien; ?>"><i class="fa fa-plus"></i> Thêm ca làm</a>
+                                            </td>
                                             </tbody>
                                         </table>
-                                        <a style="float: right;" type="add" class="btn btn-primary" data-toggle="modal"data-target="#nv<?php echo $id_nhanvien; ?>"class="btn btn-primary"><i class="fa fa-plus"></i> Thêm ca làm</a>
                                         <p style='color: red'> <?php if(isset($_COOKIE["messageCalendar"])) { echo $_COOKIE['messageCalendar']; }?></p>
                                         <button type="submit" name="submit" class="btn btn-success btn-md">Cập nhật
                                         </button>
@@ -175,15 +182,15 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/inc/leftbar.php';
                                                                            value="<?php echo $arTime['id'] ?>"
                                                                            class="form-control"/>
                                                                 </div>
-                                                                <div class="form-group">
+                                                                <div class="form-group col-sm-6">
                                                                     <label>Ngày làm</label>
-                                                                    <input type="date" name="ngay_lam"
+                                                                    <input style="width: 100%;" type="date" name="ngay_lam"
                                                                            value="<?php echo $arTime['ngay_lam'] ?>"
                                                                            class="form-control"/>
                                                                 </div>
-                                                                <div class="form-group">
+                                                                <div class="form-group col-sm-6">
                                                                     <label>Ca</label>
-                                                                    <select class="form-control" name="id_ca">
+                                                                    <select class="form-control" name="id_ca" style="width: 100%;">
                                                                         <?php
                                                                         $sql = "SELECT * FROM ca";
                                                                         $resultSql = $mysqli->query($sql);
@@ -202,9 +209,9 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/inc/leftbar.php';
                                                                 </div>
 
                                                                 <p class="text_stong"><b>Số giờ làm: </b><span><?php echo $so_gio."h"; ?></span></p>
-                                                                <button type="submit" name="update"
-                                                                        class="btn btn-success btn-md">Cập nhật
+                                                                <button type="submit" name="update" style="float: right" class="btn btn-success btn-md" >Cập nhật
                                                                 </button>
+                                                                <p></p>
                                                             </form>
                                                         </div>
                                                     </div>
@@ -238,12 +245,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/inc/leftbar.php';
                                                     <div class="modal-body">
                                                         <form role="form" action="" method="POST" id="form-menu" enctype="multipart/form-data">
                                                             <?php
-                                                            // $ngay_lam = date("d/m/Y",strtotime($arTime['ngay_lam']));
-                                                            // $ten_ca   = $arTime['ten_ca'];
-                                                            // $bat_dau = $arTime['bat_dau'];
-                                                            // $ket_thuc = $arTime['ket_thuc'];
-                                                            // $so_gio = $arTime['so_gio'];
-                                                           
+                                                     
                                                             if (isset($_POST['add'])) {
                                                                 $ngay_lam = $_POST['ngay_lam'];
                                                                 $id_ca = $_POST['id_ca'];
@@ -298,9 +300,9 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/inc/leftbar.php';
                                                                     ?>
                                                                 </select>
                                                             </div>
-                                                            
                                                             <p class="text_stong"><b>Số giờ làm: </b><span><?php echo $so_gio."h";; ?></span></p>
-                                                            <input type="submit" name="add" value="Thêm ca" class="btn btn-success btn-md">
+                                                            <input style="float: right;" type="submit" name="add" value="Thêm ca" class="btn btn-success btn-md">
+                                                            <p></p>
                                                         </form>
                                                     </div>
                                                 </div>

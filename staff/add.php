@@ -164,7 +164,7 @@
                                                 <td></td>
                                                 <td></td>
                                                 <td class="text-center">
-                                                    <a type="add" class="btn" data-toggle="modal"data-target="#<?php echo $id_nhanvien?>"class="btn btn-primary"><i class="fa fa-plus"></i> Thêm ca làm</a>
+                                                    <a type="add" class="btn" data-toggle="modal"data-target="#<?php echo $id_nhanvien?>"><i class="fa fa-plus"></i> Thêm ca làm</a>
                                                 </td>
                                             </tr>
                                             </tbody>
@@ -262,15 +262,15 @@
                                                                            value="<?php echo $arTime['id'] ?>"
                                                                            class="form-control"/>
                                                                 </div>
-                                                                <div class="form-group">
+                                                                <div class="form-group col-sm-6">
                                                                     <label>Ngày làm</label>
-                                                                    <input type="date" name="ngay_lam"
+                                                                    <input style="width: 100%" type="date" name="ngay_lam"
                                                                            value="<?php echo $arTime['ngay_lam'] ?>"
                                                                            class="form-control"/>
                                                                 </div>
-                                                                <div class="form-group">
+                                                                <div class="form-group col-sm-6">
                                                                     <label>Ca</label>
-                                                                    <select class="form-control" name="id_ca">
+                                                                    <select class="form-control" name="id_ca" style="width: 100%">
                                                                         <?php
                                                                         $sql = "SELECT * FROM ca";
                                                                         $resultSql = $mysqli->query($sql);
@@ -290,9 +290,10 @@
 
                                                                 <p class="text_stong"><b>Số giờ làm: </b><span><?php echo $so_gio;
                                                                         echo "h"; ?></span></p>
-                                                                <button type="submit" name="update"
+                                                                <button style="float:right" type="submit" name="update"
                                                                         class="btn btn-success btn-md">Cập nhật
                                                                 </button>
+                                                                <p></p>
                                                             </form>
                                                         </div>
                                                     </div>
@@ -356,14 +357,14 @@
                                                             <div class="form-group">
                                                                 <input type="hidden" name="id_nhanvien" class="form-control" value="<?php echo $id_nhanvien?>"/>
                                                             </div>
-                                                            <div class="form-group">
+                                                            <div class="form-group col-sm-6">
                                                                 <label>Ngày làm</label>
-                                                                <input type="date" name="ngay_lam" class="form-control"
+                                                                <input style="width: 100%" type="date" name="ngay_lam" class="form-control"
                                                                        required="required"/>
                                                             </div>
-                                                            <div class="form-group">
+                                                            <div class="form-group col-sm-6">
                                                                 <label>Ca</label>
-                                                                <select class="form-control" name="id_ca">
+                                                                <select class="form-control" name="id_ca" style="width: 100%">
                                                                     <option value="">---Chọn ca---</option>
                                                                     <?php
                                                                     $sql = "SELECT * FROM ca";
@@ -384,7 +385,8 @@
                                                             </div>
                                                             
                                                             <p class="text_stong"><b>Số giờ làm: </b><span>5h</span></p>
-                                                            <input type="submit" name="addTime" value="Thêm ca" class="btn btn-success btn-md">
+                                                            <input style="float:right" type="submit" name="addTime" value="Thêm ca" class="btn btn-success btn-md">
+                                                            <p></p>
                                                         </form>
                                                     </div>
                                                 </div>
