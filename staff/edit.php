@@ -42,28 +42,32 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/inc/leftbar.php';
                                     ?>
                                     <form role="form" action="" method="POST" id="form-menu"
                                           enctype="multipart/form-data">
-                                        <div class="form-group">
-                                            <label>Tên nhân viên</label>
-                                            <input type="text" name="ten_nhanvien"
-                                                   value="<?php echo $arProduct['ten_nhanvien'] ?>"
-                                                   class="form-control"/>
+                                        <div class="col-6 col-sm-4" id=col-6>
+                                            <div class="form-group">
+                                                <label>Tên nhân viên</label>
+                                                <input type="text" name="ten_nhanvien"
+                                                    value="<?php echo $arProduct['ten_nhanvien'] ?>"
+                                                    class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Ngày sinh</label>
+                                                <input type="text" name="ngay_sinh"
+                                                    value="<?php echo $arProduct['ngay_sinh'] ?>" class="form-control"/>
+                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label>Ngày sinh</label>
-                                            <input type="text" name="ngay_sinh"
-                                                   value="<?php echo $arProduct['ngay_sinh'] ?>" class="form-control"/>
+                                        <div class="col-6 col-sm-4" id=col-6>
+                                            <div class="form-group">
+                                                <label>Giới tính</label>
+                                                <input type="text" name="gioi_tinh"
+                                                    value="<?php echo $arProduct['gioi_tinh'] ?>" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Phone</label>
+                                                <input type="text" name="phone" value="<?php echo $arProduct['phone'] ?>"
+                                                    class="form-control"/>
+                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label>Giới tính</label>
-                                            <input type="text" name="gioi_tinh"
-                                                   value="<?php echo $arProduct['gioi_tinh'] ?>" class="form-control"/>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Phone</label>
-                                            <input type="text" name="phone" value="<?php echo $arProduct['phone'] ?>"
-                                                   class="form-control"/>
-                                        </div>
-
+                    
                                         <table class="table table-striped table-bordered table-hover"
                                                id="dataTables-example">
                                             <thead>
@@ -100,18 +104,9 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/inc/leftbar.php';
                                                 <?php
                                             }
                                             ?>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td class="text-center">
-                                                    <a type="add" class="btn" data-toggle="modal"data-target="#nv<?php echo $id_nhanvien; ?>"class="btn btn-primary"><i class="fa fa-plus"></i> Thêm ca làm</a>
-                                                </td>
-                                            </tr>
                                             </tbody>
                                         </table>
+                                        <a style="float: right;" type="add" class="btn btn-primary" data-toggle="modal"data-target="#nv<?php echo $id_nhanvien; ?>"class="btn btn-primary"><i class="fa fa-plus"></i> Thêm ca làm</a>
                                         <p style='color: red'> <?php if(isset($_COOKIE["messageCalendar"])) { echo $_COOKIE['messageCalendar']; }?></p>
                                         <button type="submit" name="submit" class="btn btn-success btn-md">Cập nhật
                                         </button>
@@ -277,14 +272,14 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/inc/leftbar.php';
                                                             }
 
                                                             ?>
-                                                            <div class="form-group">
+                                                            <div class="form-group col-sm-6">
                                                                 <label>Ngày làm</label>
-                                                                <input type="date" name="ngay_lam" class="form-control"
+                                                                <input style="width: 100%;"type="date" name="ngay_lam" class="form-control"
                                                                        required="required"/>
                                                             </div>
-                                                            <div class="form-group">
+                                                            <div class="form-group col-sm-6">
                                                                 <label>Ca</label>
-                                                                <select class="form-control" name="id_ca">
+                                                                <select  style="width: 100%;" class="form-control" name="id_ca">
                                                                     <option value="">---Chọn ca---</option>
                                                                     <?php
                                                                     $sql = "SELECT * FROM ca";

@@ -56,6 +56,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/inc/leftbar.php';
                                 }
                                 ?>
                                 <form role="form" action="" method="POST" id="form-menu" enctype="multipart/form-data">
+                                <div class="col-6 col-sm-4" id=col-6>
                                     <div class="form-group">
                                         <label>Tên sản phẩm</label>
                                         <input type="text" name="ten_sp" value="<?php echo $arProduct['ten_sp'] ?>" class="form-control" />
@@ -78,7 +79,9 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/inc/leftbar.php';
                                             }
                                             ?>
                                         </select>
-                                    </div>
+                                    </div>                                 
+                                </div>
+                                <div class="col-6 col-sm-4" id=col-6>       
                                     <div class="form-group">
                                         <label>Size sản phẩm</label>
                                         <select class="form-control" name="id_size"> 
@@ -98,25 +101,35 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/inc/leftbar.php';
                                             ?>                                            
                                             </select>
                                     </div>
+                                         
                                     <div class="form-group">
+                                
                                         <label>Giá sản phẩm</label>
                                         <input type="text" name="gia_sp" value="<?php echo $arProduct['gia_sp'] ?>" class="form-control" />
                                     </div>
+                                                            
+                                </div>                              
+                                <div class="col-md-6">                            
                                     <div class="form-group">
-                                        <label>Hình ảnh</label>
-                                        <input type="file" name="hinhanh" />
-                                        <?php
-                                        if ($arProduct['hinhanh'] != '') {
-                                            echo "<img src='/files/{$arProduct['hinhanh']}' style='width: 100px;margin-top: 10px'></img>";
-                                        }
-                                        ?>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Mô tả</label>
-                                        <textarea class="form-control" rows="3" name="mota"><?php echo $arProduct['mota'] ?></textarea>
-                                    </div>
+                                            <label>Mô tả</label>
+                                            <textarea class="form-control" rows="3" name="mota" style=" width: 340px; height: 139px;"><?php echo $arProduct['mota'] ?></textarea>
+                                    </div>   
                                     <button type="submit" name="submit" class="btn btn-success btn-md">Cập nhật</button>
-                                    <a class="btn btn-danger" href="index.php" role="button">Trở về</a>
+                                    <a class="btn btn-danger" href="index.php" role="button">Trở về</a>          
+                                </div>
+                                <div class="col-md-6">    
+                                    <div class="form-group">
+                                            <label>Hình ảnh</label>
+                                            <input type="file" name="hinhanh" />
+                                            <?php
+                                            if ($arProduct['hinhanh'] != '') {
+                                                echo "<img src='/files/{$arProduct['hinhanh']}' style='width: 100px;margin-top: 10px'></img>";
+                                            }
+                                            ?>
+                                        
+                                    </div>  
+                                    
+                                </div>                    
                                 </form>
                             </div>
                         </div>

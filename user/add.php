@@ -48,29 +48,30 @@
                                 ?>
                                 <form  action = "" method= "post" role="form">
                                 <div class="col-6 col-sm-4" id=col-6>
-                                <div class="form-group">
+                                    <div class="form-group">
                                         <label>Fullname: </label>
                                         <input type="text" name="fullname" class="form-control" required="required"/>
                                     </div>
+                                   
                                     <div class="form-group">
-                                        <label>Username: </label>
-                                        <input type="text" name="username" class="form-control" required="required"/>
+                                        <label>Password: </label>
+                                        <input type="password" name="password" class="form-control" required="required"/>
                                     </div>
                                     <?php if($messagePass) echo "<p style='color: red'>$messagePass</p>"?>
                                     <button type="submit" name="submit" class="btn btn-success btn-md">Thêm</button>
                                     <a class="btn btn-danger" href="index.php" role="button">Trở về</a>
-                                    </div>
-                                    <div class="col-6 col-sm-4" id=col-6>
+                                </div>
+                                <div class="col-6 col-sm-4" id=col-6>
                                     <?php if($messageUser) echo "<p style='color: red'>$messageUser</p>"?>
                                     <div class="form-group">
-                                        <label>Password: </label>
-                                        <input type="password" name="password" class="form-control" required="required"/>
+                                        <label>Username: </label>
+                                        <input type="text" name="username" class="form-control" required="required"/>
                                     </div>
                                     <div class="form-group">
                                         <label>Confirm Password: </label>
                                         <input type="password" name="cnfPassword" class="form-control" required="required"/>
                                     </div>
-                                    </div>
+                                </div>
                                     
                                 </form>
                             </div>

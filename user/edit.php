@@ -58,29 +58,30 @@
                                         }
                                 ?>
                                 <form  action = "" method= "post" role="form">
+                                <div class="col-6 col-sm-4" id=col-6>
                                     <div class="form-group">
                                         <label>Fullname: </label>
                                         <input type="text" name="fullname"  value ="<?php echo $arUser['fullname'];?>" class="form-control" />
                                     </div>
                                     <div class="form-group">
-                                        <label>Username: </label>
-                                        <input type="text" name="username"  value ="<?php echo $arUser['username'];?>" readonly  class="form-control" />
-                                    </div>
-                                    <div class="form-group">
                                         <label>Password: </label>
                                         <input type="password" name="password" class="form-control" />
+                                    </div>
+                                    <button type="submit" name="submit" class="btn btn-success btn-md">Sửa</button>
+                                    <a class="btn btn-danger" href="index.php" role="button">Trở về</a>
+                                </div>
+                                <div class="col-6 col-sm-4" id=col-6>
+                                <div class="form-group">
+                                        <label>Username: </label>
+                                        <input type="text" name="username"  value ="<?php echo $arUser['username'];?>" readonly  class="form-control" />
                                     </div>
                                     <div class="form-group">
                                         <label>Confirm Password: </label>
                                         <input type="password" name="cnfPassword" class="form-control" />
                                     </div>
                                     <?php if($messagePass) echo "<p style='color: red'>$messagePass</p>"?>
-                                    <button type="submit" name="submit" class="btn btn-success btn-md">Sửa</button>
-                                    <a class="btn btn-danger" href="index.php" role="button">Trở về</a>
+                                </div>
                                 </form>
-
-
-
                             </div>
 
                         </div>

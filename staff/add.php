@@ -58,17 +58,16 @@
                                             value="<?php if(isset($_COOKIE["id_nhanvien"])) { echo $_COOKIE["id_nhanvien"]; } ?>"/>
                                     </div>
                                     <div class="col-6 col-sm-4" id=col-6>
-                                    <div class="form-group"  >
-                                        <label>Tên nhân viên</label>
-                                        <input type="text" name="ten_nhanvien" class="form-control"
-                                            value="<?php if(isset($_COOKIE["ten_nhanvien"])) { echo $_COOKIE["ten_nhanvien"]; } ?>" required="required"/>
-                                    </div>
+                                        <div class="form-group"  >
+                                            <label>Tên nhân viên</label>
+                                            <input type="text" name="ten_nhanvien" class="form-control"
+                                                value="<?php if(isset($_COOKIE["ten_nhanvien"])) { echo $_COOKIE["ten_nhanvien"]; } ?>" required="required"/>
+                                        </div>
                                         <div class="form-group" >
                                             <label>Ngày sinh</label>
                                             <input type="date" name="ngay_sinh" class="form-control"
                                             value="<?php if(isset($_COOKIE["ngay_sinh"])) { echo $_COOKIE["ngay_sinh"]; } ?>" required="required"/>
-                                        </div>                         
-                                      
+                                        </div>                                                
                                         <button type="submit" name="add" class="btn btn-success btn-md">Thêm ca làm</button>
                                     </div>
                                     <div class="col-6 col-sm-4" id=col-6>

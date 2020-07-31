@@ -78,8 +78,8 @@
                                     
                                     <button type="submit" name="submit" class="btn btn-success btn-md">Thêm</button>
                                     <a class="btn btn-danger" href="index.php" role="button">Trở về</a>
-                                    </div>
-                                    <div  class="col-6 col-sm-4" id=col-6>
+                                </div>
+                                <div  class="col-6 col-sm-4" id=col-6>
                                     <div class="form-group">
                                         <label>Giá sản phẩm</label>
                                         <input type="text" name="gia_sp" class="form-control" required="required"/>
@@ -104,7 +104,7 @@
                                         <label>Hình ảnh</label>
                                         <input type="file" name="hinhanh" required="required"/>
                                     </div>
-                                    </div>
+                                </div>
                                    
                                 </form>
                             </div>
