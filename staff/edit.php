@@ -58,8 +58,25 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/inc/leftbar.php';
                                         <div class="col-6 col-sm-4" id=col-6>
                                             <div class="form-group">
                                                 <label>Giới tính</label>
-                                                <input type="text" name="gioi_tinh"
-                                                    value="<?php echo $arProduct['gioi_tinh'] ?>" class="form-control"/>
+                                                <select class="form-control" name="gioi_tinh">
+                                                    <?php
+                                                        if($arProduct['gioi_tinh'] == "Nam"){
+                                                    ?>
+                                                    <option value="Nam" selected>
+                                                            <?php echo $arProduct['gioi_tinh'];?>
+                                                        </option> 
+                                                        <option value="Nữ">Nữ</option>
+                                                    <?php
+                                                        } else if($arProduct['gioi_tinh'] == "Nữ"){
+                                                    ?>
+                                                        <option value="Nam" selected>
+                                                            <?php echo $arProduct['gioi_tinh'];?>
+                                                        </option> 
+                                                        <option value="Nam">Nam</option>
+                                                    <?php
+                                                        }
+                                                    ?>
+                                                </select>
                                             </div>
                                             <div class="form-group">
                                                 <label>Phone</label>
@@ -115,7 +132,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/inc/leftbar.php';
                                             </tbody>
                                         </table>
                                         <p style='color: red'> <?php if(isset($_COOKIE["messageCalendar"])) { echo $_COOKIE['messageCalendar']; }?></p>
-                                        <button type="submit" name="submit" class="btn btn-success btn-md">Cập nhật
+                                        <button  type="submit" name="submit" class="btn btn-success btn-md">Cập nhật
                                         </button>
                                         <a class="btn btn-danger" href="index.php" role="button">Trở về</a>
 
@@ -209,7 +226,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/inc/leftbar.php';
                                                                 </div>
 
                                                                 <p class="text_stong"><b>Số giờ làm: </b><span><?php echo $so_gio."h"; ?></span></p>
-                                                                <button type="submit" name="update" style="float: right" class="btn btn-success btn-md" >Cập nhật
+                                                                <button  type="submit" name="update" style="float: right" class="btn btn-success btn-md" >Cập nhật
                                                                 </button>
                                                                 <p></p>
                                                             </form>
